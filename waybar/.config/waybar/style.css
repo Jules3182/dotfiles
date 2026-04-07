@@ -1,0 +1,85 @@
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+  border: none;
+}
+
+/* make the bar invisible */
+window#waybar {
+  background: transparent;
+  margin-bottom: 0px;
+}
+
+.modules-right {
+    margin: 2px 12px 0 0;
+}
+.modules-center {
+    margin: 2px 0 0 0;
+}
+.modules-left {
+    margin: 2px 0 0 12px;
+}
+
+/* shared pill style */
+#workspaces,
+#clock,
+#pulseaudio,
+#network,
+#memory,
+#cpu,
+#custom-pomodoro,
+#tray,
+#window,
+#custom-day,
+#custom-date,
+#custom-wallpaper
+{
+  background: rgba(20, 20, 20, 0.65);
+  border-radius: 100px;
+  padding: 3px 12px;
+  margin: 8px 6px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/*
+#custom-day, #custom-date {
+  background: rgba(20, 20, 20, 0.45);
+}
+*/
+
+/* workspaces buttons inside pill */
+#workspaces button {
+  padding: 4px 18px;
+  margin: 0 2px;
+  border-radius: 8px;
+  color: #aaa;
+}
+
+#workspaces button.active {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* center clock */
+#clock {
+  font-weight: 600;
+}
+
+/* right side spacing */
+#pulseaudio,
+#network,
+#memory,
+#tray
+{
+  padding: 6px 10px;
+}
+
+#tray
+{
+  padding: 0 15px 0 15px;
+}
+
+#custom-wallpaper
+{
+  border-radius: 100px;
+}

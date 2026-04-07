@@ -1,0 +1,57 @@
+{
+  "layer": "top",
+  "output": "DP-3",
+  "position": "top",
+
+  "modules-left": ["custom/wallpaper", "hyprland/window"],
+  "modules-center": ["custom/day", "clock", "custom/date"],
+  "modules-right": ["network", "memory", "cpu", "pulseaudio"],  
+
+  "clock": {
+    "actions": {
+    "on-scroll-down": "shift_up",
+    "on-scroll-up": "shift_down",
+    "on-click-middle": "shift_reset",
+    "on-click-right": "mode"
+    },
+    "tooltip": false,
+    "format": "{:%I:%M:%S}",
+    "interval": 1
+  },
+  "network": {
+    "format": "{bandwidthUpBits}  | {bandwidthDownBits} "
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+  "tray": {
+	"icon-size": 21,
+	"spacing": 10
+  },
+  "custom/day": {
+    "exec": "date +'%a'",
+    "interval": 60
+  },
+  "custom/date": {
+    "exec": "date +'%-m/%-d'",
+    "interval": 60
+  },
+  "cpu": {
+    "format": "CPU: {}%"
+  },
+  "memory": {
+    "format": "Memory: {}%"
+  },
+  "custom/wallpaper": {
+  "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",
+  "on-click": "~/.config/hypr/scripts/toggle_wallpaper.sh",
+  "interval": 1
+  }
+
+} 
+

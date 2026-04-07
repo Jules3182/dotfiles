@@ -1,0 +1,17 @@
+{
+  "name": "bottom-bar",
+  "layer": "top",
+  "output": "DP-3",
+  "position": "bottom",
+
+  "modules-left": ["tray"],
+  
+  "modules-center": ["hyprland/workspaces"],
+  
+  "hyprland/workspaces":{
+    "format": "{name}",
+    "persistent-workspaces": {
+      "DP-3": [ 1, 2, 3, 4, 5 ]
+    }
+  }
+}
