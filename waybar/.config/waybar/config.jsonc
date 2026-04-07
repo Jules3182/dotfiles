@@ -8,12 +8,6 @@
   "modules-right": ["network", "memory", "cpu", "pulseaudio"],  
 
   "clock": {
-    "actions": {
-    "on-scroll-down": "shift_up",
-    "on-scroll-up": "shift_down",
-    "on-click-middle": "shift_reset",
-    "on-click-right": "mode"
-    },
     "tooltip": false,
     "format": "{:%I:%M:%S}",
     "interval": 1
@@ -28,10 +22,6 @@
       "default": ["", "", " "]
     },
     "on-click": "pavucontrol"
-  },
-  "tray": {
-	"icon-size": 21,
-	"spacing": 10
   },
   "custom/day": {
     "exec": "date +'%a'",
@@ -48,8 +38,8 @@
     "format": "Memory: {}%"
   },
   "custom/wallpaper": {
-  "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",
-  "on-click": "~/.config/hypr/scripts/toggle_wallpaper.sh",
+    "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",
+    "on-click": "~/.config/hypr/scripts/toggle_wallpaper.sh",
   "interval": 1
   }
 

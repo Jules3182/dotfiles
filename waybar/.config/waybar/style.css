@@ -49,15 +49,21 @@ window#waybar {
 
 /* workspaces buttons inside pill */
 #workspaces button {
-  padding: 4px 18px;
+  padding: 4px 12px;
   margin: 0 2px;
   border-radius: 8px;
   color: #aaa;
+  transition: 0.15s all ease;
 }
 
 #workspaces button.active {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.25);
   color: #fff;
+  padding: 4px 25px;
+}
+
+#workspaces button:hover:not(.active) {
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* center clock */
@@ -68,8 +74,7 @@ window#waybar {
 /* right side spacing */
 #pulseaudio,
 #network,
-#memory,
-#tray
+#memory
 {
   padding: 6px 10px;
 }

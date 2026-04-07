@@ -5,7 +5,7 @@
   "position": "bottom",
 
   "modules-left": ["tray"],
-  
+
   "modules-center": ["hyprland/workspaces"],
   
   "hyprland/workspaces":{
@@ -13,5 +13,13 @@
     "persistent-workspaces": {
       "DP-3": [ 1, 2, 3, 4, 5 ]
     }
+  },
+  "tray": {
+	  "icon-size": 21,
+	  "spacing": 10//,
+//    "actions": {
+//      "on-scroll-down": "shift_up",
+//      "on-scroll-up": "shift_down"
+//    }
   }
 }
