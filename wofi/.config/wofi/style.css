@@ -1,0 +1,23 @@
+* {
+  border: none;
+}
+window {
+  background: transparent;
+}
+
+#outer-box{
+  background-color: rgba(29, 31, 40, 0.7);
+  border: double 2px #ffffff;
+  border-radius: 12px;
+}
+
+#input {
+  margin: 10px;
+  border-radius: 8px;
+}
+
+#entry:selected {
+  background: rgba(255,255,255,0.1);
+  border-image: linear-gradient(-45deg, #ffffff, #5adecd) 1;
+}
+
