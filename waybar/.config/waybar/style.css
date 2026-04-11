@@ -32,7 +32,8 @@ window#waybar {
 #window,
 #custom-day,
 #custom-date,
-#custom-wallpaper
+#custom-wallpaper,
+#custom-notification
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
