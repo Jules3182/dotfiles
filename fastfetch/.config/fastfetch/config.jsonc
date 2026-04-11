@@ -1,0 +1,141 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+ /* "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/logo.txt",	
+    "color": {
+      "1": "white",
+      "2": "36",
+    },
+    "padding": {
+      "top": 4,
+      "left": 3,
+    }
+ // }, */
+  "display": {
+        "separator": "",
+        "constants": [
+            "──────────────" // {$1}, used in Custom module
+        ],
+        "key": {
+            "width": 10
+        }
+    },
+    "modules": [
+        {
+            "type": "custom", // HardwareStart
+            // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
+            "format": "{#90}┌{$1} Hardware {$1}{$1}┐{#}"
+        },
+        {
+            "key": "CPU",
+            "type": "cpu",
+            "showPeCoreCount": true,
+            "keyColor": "33"
+        },
+        {
+            "key": "GPU",
+            "type": "gpu",
+            "keyColor": "32"
+        },
+        {
+            "key": "Display",
+            "type": "display",
+            "keyColor": "36"
+        },
+        {
+            "key": "Disk",
+            "type": "disk",
+            "folders": "/",
+            "keyColor": "34"
+        },
+        {
+            "key": "Disk",
+            "type": "disk",
+            "folders": "/media/plex",
+            "keyColor": "94"
+        },
+        {
+            "key": "Memory",
+            "type": "memory",
+            "keyColor": "31"
+        },
+        {
+            "key": "Swap",
+            "type": "swap",
+            "keyColor": "95"
+        },
+        {
+            "type": "custom", // InformationEnd
+            "format": "{#90}└{$1}────────────────────────{$1}┘{#}"
+        },
+        {
+            "type": "custom", // SoftwareStart
+            // {#1} is equivalent to `\u001b[1m`. {#} is equivalent to `\u001b[m`
+            "format": "{#90}┌{$1} Software {$1}{$1}┐{#}"
+        },
+        {
+            "key": "OS",
+            "type": "os",
+            "keyColor": "33"
+        },
+        {
+            "key": "Kernel",
+            "type": "kernel",
+            "keyColor": "93"
+        },
+        {
+            "key": "DM",
+            "type": "lm",
+            "keyColor": "35"
+        },
+        {
+            "key": "DE",
+            "type": "de",
+            "keyColor": "91"
+        },
+        {
+            "key": "WM",
+            "type": "wm",
+            "keyColor": "32"
+        },
+        {
+            "key": "Theme",
+            "type": "theme",
+            "keyColor": "92"
+        },
+        {
+            "key": "Icons",
+            "type": "icons",
+            "keyColor": "36"
+        },
+        {
+            "key": "Font",
+            "type": "font",
+            "keyColor": "96"
+        },
+        {
+            "key": "Font",
+            "type": "terminalfont",
+            "keyColor": "34"
+        },
+        {
+            "key": "Terminal",
+            "type": "terminal",
+            "keyColor": "94"
+        },
+        {
+            "key": "Shell",
+            "type": "shell",
+            "keyColor": "34"
+        },
+        {
+            "type": "custom", // InformationEnd
+            "format": "{#90}└{$1}────────────────────────{$1}┘{#}"
+        },
+            {
+    "type": "custom",
+    "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[38m  \u001b[39m  \u001b[39m    \u001b[38m  \u001b[37m  \u001b[36m  \u001b[35m  \u001b[34m  \u001b[33m  \u001b[32m  \u001b[31m  \u001b[90m "
+    },
+    ]
+}
