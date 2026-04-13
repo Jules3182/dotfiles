@@ -8,6 +8,8 @@
 
   "modules-center": ["hyprland/workspaces"],
   
+  "modules-right": ["custom/notification"],
+
   "hyprland/workspaces":{
     "format": "{name}",
     "persistent-workspaces": {
@@ -21,5 +23,26 @@
 //      "on-scroll-down": "shift_up",
 //      "on-scroll-up": "shift_down"
 //    }
+  },
+    "custom/notification": {
+    "tooltip": true,
+    "format": "",
+/*    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    }, */
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   }
 }

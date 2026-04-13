@@ -1,0 +1,35 @@
+@define-color noti-border-color rgba(255, 255, 255, 0);
+@define-color noti-bg rgba(29, 31, 40, 0.65);
+@define-color noti-bg-alt #111111;
+@define-color noti-bg-hover @color2;
+@define-color text-color rgb(253, 253, 253);
+@define-color text-color-alt rgb(253, 253, 253);
+@define-color text-color-disabled rgba(253, 253, 253, 0.8);
+
+* {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.control-center {
+    background: @noti-bg;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  opacity: 1;
+  background-color: @noti-bg;
+  border-radius: 10px;
+}
+
+.notification-row {
+    outline: none;
+    margin: 0px;
+}
+
+.notification {
+    border-radius: 10px;
+    background: @noti-bg;
+    border: 1px solid rgba(255,255,255,0.08);
+}
