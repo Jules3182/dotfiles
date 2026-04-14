@@ -111,9 +111,9 @@ bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
 
 - [ ] Clean up notifications center (it's mostly unfinished)
   - [ ] Add a calendar
-  - [ ] Load in animation
+  - [x] Load in animation
   - [ ] "chat bubble" style tail on the bottom
-- [ ] Animations for wofi start (And maybe theme it more like spotlight search)
+- [x] Animations for wofi start (And maybe theme it more like spotlight search)
 - [ ] Background change animation? (Not nessesary but would be nice)
 - [ ] Power menu
 
