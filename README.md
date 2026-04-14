@@ -50,9 +50,13 @@ A taskbar for Hyprland, super customizable in both look and utility. i was able 
 
 ### [Wofi](https://github.com/SimplyCEO/wofi)
 
+![Wofi](/Resources/Screenshots/Wofi.png)
+
 The app launcher I've been using. honestly I'm not completely sold on it though. Works perfectly fine, but I need to tune the look and feel more. 
 
 ### [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
+
+![SwawNC](/Resources/Screenshots/Swaync.png)
 
 My notification center. This one needs the most work to be honest, it was my most recent addition to the set up abd is the lease customized (for now)
 
@@ -79,7 +83,8 @@ bind = $mainMod, B, exec, brave-browser # Browser Shortcut
 bind = $mainMod, R, exec, ~/.config/hypr/scripts/reload.sh # Relaods waybar, hyprpaper, and swaync
 bind = $mainMod, f, fullscreen # Fullscreen
 bind = $mainMod, H, exec, killall -SIGUSR1 waybar # Hide waybar
-bind = CTRL SHIFT, page_down, exec, hyprshot -m output -o $HOME/Pictures/Screenshots # Screenshots
+bind = CTRL SHIFT, page_down, exec, hyprshot -m output -o $HOME/Pictures/Screenshots # Screenshots window
+bind = CTRL SHIFT, page_up, exec, hyprshot -m region output -o $HOME/Pictures/Screenshots # Screenshot region
 bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
 ```
 
