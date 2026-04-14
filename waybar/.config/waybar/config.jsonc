@@ -5,7 +5,7 @@
 
   "modules-left": ["custom/wallpaper", "hyprland/window"],
   "modules-center": ["custom/day", "clock", "custom/date"],
-  "modules-right": ["network", "memory", "cpu", "pulseaudio"],  
+  "modules-right": ["network", "memory", "cpu", "pulseaudio", "custom/power"],  
 
   "clock": {
     "tooltip": false,
@@ -41,6 +41,17 @@
     "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",
     "on-click": "~/.config/hypr/scripts/toggle_wallpaper.sh",
   "interval": 1
+  },
+  "custom/power": {
+	"format" : "⏻",
+	"tooltip": false,
+	"menu": "on-click",
+	"menu-file": "~/.config/waybar/power_menu.xml",
+	"menu-actions": {
+		"shutdown": "shutdown",
+		"reboot": "reboot",
+		"logout": "exit"
+	}
   }
 
 } 

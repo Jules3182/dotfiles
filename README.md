@@ -56,7 +56,7 @@ Everyone's favorite Tiling Window Manager. I was resistant at first, but after u
 **Top Bar:**
 ![Top Waybar](/Resources/Screenshots/TopWaybar.png)
 
-*Contains my wallpaper switcher, active window, Day-Time-Date, Network up/down, memory %, CPU %, and volume*
+*Contains my wallpaper switcher, active window, Day-Time-Date, Network up/down, memory %, CPU %, volume, and power menu*
 
 **Bottom Bar:**
 ![Bottom Waybar](/Resources/Screenshots/BottomWaybar.png)
@@ -95,7 +95,7 @@ The icing on my Ghostty cake. Just a fancy looking terminal prompt for me, thoug
 
 I mean what's a rice without fastfetching? I have a custom logo for it in the repo but haven't been using it lately. 
 
-## Keybindings:
+## Custom Additional Keybindings:
 
 ```
 bind = $mainMod, B, exec, brave-browser # Browser Shortcut
@@ -110,12 +110,11 @@ bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
 ## Whats Left?
 
 - [ ] Clean up notifications center (it's mostly unfinished)
-  - [ ] Add a calendar
   - [x] Load in animation
   - [ ] "chat bubble" style tail on the bottom
 - [x] Animations for wofi start (And maybe theme it more like spotlight search)
-- [ ] Background change animation? (Not nessesary but would be nice)
-- [ ] Power menu
+- [x] Background change animation? (Not nessesary but would be nice)
+- [x] Power menu
 
 ### Misc Tools/links:
 
