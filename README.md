@@ -1,3 +1,5 @@
+[![Nobara Linux](https://img.shields.io/badge/Nobara%20Linux-000?logo=nobaralinux&logoColor=fff)](#)[![Ghostty](https://custom-icon-badges.demolab.com/badge/Ghostty-0000ff?logo=ghostty_term)](#)[![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff)](#)[![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=fff)](#)
+
 ```                                           
       ▄▄▄▄▄▄              ▄▄  ▄▄             
      █▀██▀▀██        █▄  ██    ██            
@@ -11,6 +13,9 @@
 ## My personal config files for my set up!
 
 <hr>
+My goal with this set up was to build something clean and visually appealing, without being over the top *ricy*. It's my first real venture outside of a prebuilt desktop envirnment (Or really a dedicated TM for that matter) and I've been absolutely loving it. Getting under the hood and having to set up parts of the system I had taken for granted my whole life, such as notifications or background tasks for example, has been really eye opening and exciting. It really puts you in the drivers seat. To be completely honest this started as a weekend project I just wanted to mess around with to see what the hype is all about, and I haven't booted back into gnome since.
+
+With that being said, I hope you enjoy! <3
 
 *These are still a work in progress, while the set up works pretty well it isn't very organized yet so just keep that in mind if you are cloning it*
 
@@ -23,10 +28,16 @@
 
 ![Screenshot 2](/Resources/Screenshots/Screenshot2.png)
 
+Background Photo by [Antonia Glaskova](https://unsplash.com/photos/a-group-of-pine-trees-covered-in-snow-OBOgT2CIhQM)
+
 ### Day Mode
 ![Screenshot 1](/Resources/Screenshots/Screenshot3.png)
 
 ![Screenshot 2](/Resources/Screenshots/Screenshot4.png)
+
+Background Photo By [Zhaoli JIN](https://unsplash.com/photos/beige-and-black-lamp-on-green-tree-during-nighttime-e4I2ktXz5cA)
+
+(The background switcher button is in the top left corner, script can be found [here](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/scripts/toggle_wallpaper.sh). I didn't feel like a full theme switcher would be needed, and the theming I have done works great for both so this was the perfect in between for me)
 
 ## Main Tools Used:
 
@@ -38,13 +49,19 @@ My personal distro of choice, based on fedora and optimized for gaming and media
 
 ![Hyprland](/Resources/Screenshots/Hyprland.png)
 
-Everyone's favorite Tiling Window Manager. I was resistant at first, but after using it for about 10 minutes I fell in love and havent looked back (sorry gnome)
+Everyone's favorite Tiling Window Manager. I was resistant at first, but after using it for about 10 minutes I fell in love and haven't looked back (sorry gnome)
 
 ### [Waybar](https://github.com/alexays/waybar)
 
+**Top Bar:**
 ![Top Waybar](/Resources/Screenshots/TopWaybar.png)
 
+*Contains my wallpaper switcher, active window, Day-Time-Date, Network up/down, memory %, CPU %, and volume*
+
+**Bottom Bar:**
 ![Bottom Waybar](/Resources/Screenshots/BottomWaybar.png)
+
+*Contains background tasks, persistent workspace switcher, and notifications button*
 
 A taskbar for Hyprland, super customizable in both look and utility. i was able to create the "pills" that I like, and have a main bar at the top runnjng as well as a bottom bar for worksace switching, tasks, and notifications. 
 
@@ -61,6 +78,8 @@ The app launcher I've been using. honestly I'm not completely sold on it though.
 My notification center. This one needs the most work to be honest, it was my most recent addition to the set up abd is the lease customized (for now)
 
 ### [Ghostty](https://ghostty.org/)
+
+![Ghostty](/Resources/Screenshots/Ghostty.png)
 
 My favorite terminal! Works great on Linux and Mac, has all the features I would want and looks good while doing it. 
 
@@ -88,10 +107,36 @@ bind = CTRL SHIFT, page_up, exec, hyprshot -m region output -o $HOME/Pictures/Sc
 bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
 ```
 
-### Misc Tools:
+## Whats Left?
 
-[Obsidian]()
+- [ ] Clean up notifications center (it's mostly unfinished)
+  - [ ] Add a calendar
+  - [ ] Load in animation
+  - [ ] "chat bubble" style tail on the bottom
+- [ ] Animations for wofi start (And maybe theme it more like spotlight search)
+- [ ] Background change animation? (Not nessesary but would be nice)
+- [ ] Power menu
 
-[Code Server]()
+### Misc Tools/links:
 
-[cmatrix]()
+[Hyprshot](https://github.com/Gustash/Hyprshot)
+
+[Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+
+[Bezier Curve](https://cubic-bezier.vercel.app/)
+
+[Nerd Font](https://www.nerdfonts.com/)
+
+[ASCII Art Generator](https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type+Something+&x=none&v=4&h=4&w=80&we=false)
+
+[Ghostty Theming Helper](https://ghostty.zerebos.com/)
+
+[Obsidian](https://obsidian.md/)
+
+[Obsidian Theme](https://github.com/abrahambahez/Brutalism)
+
+[Code Server](https://github.com/coder/code-server)
+
+[VS Code Theme](https://open-vsx.org/extension/sndst00m/starfall-visual-studio-code)
+
+[cmatrix](https://github.com/abishekvashok/cmatrix)
