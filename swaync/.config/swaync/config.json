@@ -1,5 +1,5 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "$schema": "~/.config/swaync/configSchema.json",
   "positionX": "right",
   "positionY": "bottom",
   "layer": "overlay",
@@ -13,7 +13,7 @@
   "cssPriority": "application",
   "control-center-margin-top": 0,
   "control-center-margin-bottom": 0,
-  "control-center-margin-right": 18,
+  "control-center-margin-right": 20,
   "control-center-margin-left": 0,
   "notification-2fa-action": true,
   "notification-inline-replies": false,
@@ -57,7 +57,7 @@
     "title",
     "dnd",
     "notifications",
-    "calendar"
+    "buttons-grid"
   ],
   "widget-config": {
     "inhibitors": {
@@ -84,11 +84,14 @@
     "buttons-grid": {
       "actions": [
         {
-          "label": "直",
-          "type": "toggle",
-          "active": true,
-          "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-          "update_command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+          "label": "",
+          "type": "button",
+          "command": "hyprpicker -a -f hex"
+        },
+        {
+          "label": "",
+          "type": "button",
+          "command": "hyprshot -m region output -o $HOME/Pictures/Screenshots"
         }
       ]
     }

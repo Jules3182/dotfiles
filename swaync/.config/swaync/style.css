@@ -10,10 +10,12 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
+/* Control Center */
+
 .control-center {
     background: @noti-bg;
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
+    border-radius: 14px;
 }
 
 .control-center .notification-row:focus,
@@ -23,6 +25,17 @@
   border-radius: 10px;
 }
 
+/* Dnd stuff */
+.widget-dnd switch {
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.widget-dnd > switch:checked {
+  background: rgba(255,255,255,0.3);
+  background-color: white;
+}
+
+/* Notifications */
 .notification-row {
     outline: none;
     margin: 0px;
@@ -32,4 +45,18 @@
     border-radius: 10px;
     background: @noti-bg;
     border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Bottom Button Grid */
+
+.widget-buttons-grid {
+  background: transparent;
+}
+
+.widget-buttons-grid button {
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.widget-buttons-grid button:hover{
+  background: rgba(255, 255, 255, 0.1);;
 }
