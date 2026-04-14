@@ -12,7 +12,7 @@
 ```
 ## My personal config files for my set up!
 
-<video controls src="./Resources/Videos/HyprlandSetUp042026.MP4" title="Demo Video"></video>
+<video src="https://github.com/user-attachments/assets/e6688c99-f86b-4c10-a202-ef359d5a28ad" width="320" height="240" controls></video>
 
 <hr>
 My goal with this set up was to build something clean and visually appealing, without being over the top *ricy*. It's my first real venture outside of a prebuilt desktop envirnment (Or really a dedicated TM for that matter) and I've been absolutely loving it. Getting under the hood and having to set up parts of the system I had taken for granted my whole life, such as notifications or background tasks for example, has been really eye opening and exciting. It really puts you in the drivers seat. To be completely honest this started as a weekend project I just wanted to mess around with to see what the hype is all about, and I haven't booted back into gnome since.
