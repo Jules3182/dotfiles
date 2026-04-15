@@ -55,13 +55,23 @@ Everyone's favorite Tiling Window Manager. I was resistant at first, but after u
 
 ### [Waybar](https://github.com/alexays/waybar)
 
-**Top Bar:**
-![Top Waybar](/Resources/Screenshots/TopWaybar.png)
+#### Top Bar:
+
+**Day Mode:**
+![Top Waybar Day](/Resources/Screenshots/TopBarDay.png)
+
+**Night Mode:**
+![Top Waybar Night](/Resources/Screenshots/TopBarNight.png)
 
 *Contains my wallpaper switcher, active window, Day-Time-Date, Network up/down, memory %, CPU %, volume, and power menu*
 
-**Bottom Bar:**
-![Bottom Waybar](/Resources/Screenshots/BottomWaybar.png)
+#### Bottom Bar:
+
+**Day Mode:**
+![Bottom Waybar Day](/Resources/Screenshots/BottomBarDay.png)
+
+**Night Mode:**
+![Bottom Waybar Night](/Resources/Screenshots/BottomBarNight.png)
 
 *Contains background tasks, persistent workspace switcher, and notifications button*
 
