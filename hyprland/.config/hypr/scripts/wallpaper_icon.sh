@@ -3,7 +3,7 @@
 STATE_FILE="$HOME/.config/hypr/.wallpaper_state"
 
 if [ ! -f "$STATE_FILE" ]; then
-  echo "❄️"
+  echo ""
   exit
 fi
 

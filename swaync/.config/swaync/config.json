@@ -57,7 +57,8 @@
     "title",
     "dnd",
     "notifications",
-    "buttons-grid"
+    "buttons-grid",
+    "volume"
   ],
   "widget-config": {
     "inhibitors": {
@@ -81,6 +82,12 @@
       "image-size": 96,
       "image-radius": 12
     },
+    "widget-volume": {
+    "label": "Volume",
+    "show-per-app": false,
+    "animation-type": "slide_down",
+    "animation-duration": 250
+    },
     "buttons-grid": {
       "actions": [
         {
@@ -92,6 +99,16 @@
           "label": "",
           "type": "button",
           "command": "hyprshot -m region output -o $HOME/Pictures/Screenshots"
+        },
+        {
+          "label": "󱑏",
+          "type": "button",
+          "command": "dbus-run-session gnome-clocks"
+        },
+        {
+          "label": "",
+          "type": "button",
+          "command": ""
         }
       ]
     }

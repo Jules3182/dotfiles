@@ -3,4 +3,5 @@ width=25%
 height=30%
 matching=fuzzy
 insensitive=true
-
+no_actions=true
+allow_images=true

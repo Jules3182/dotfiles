@@ -60,3 +60,30 @@
 .widget-buttons-grid button:hover{
   background: rgba(255, 255, 255, 0.1);;
 }
+
+/* Volume slider */
+
+.widget-volume {
+  border: 1px solid rgba(255,255,255,0.08);
+  margin: 0px 20px 15px 20px;
+}
+
+.widget-volume highlight {
+  border:unset;
+  background-color: rgba(128, 128, 128, 0.4);
+}
+
+.widget-volume trough slider {
+  border-radius: 100%;
+  min-height: 1.25rem;
+  color: white;
+}
+
+.control-center slider {
+  border-radius: 9999px;
+  background-color: rgb(199, 197, 208);
+}
+
+.control-center slider:active {
+  background-color: #77767e;
+}
