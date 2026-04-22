@@ -21,9 +21,34 @@ With that being said, I hope you enjoy! <3
 
 *These are still a work in progress, while the set up works pretty well it isn't very organized yet so just keep that in mind if you are cloning it*
 
-<hr>
 
-## Screenshots:
+# Instalation:
+
+This repo is set up to use [GNU Stow](https://www.gnu.org/software/stow/) for easier and cleaner instalation with symlinks. For a great explaination of what it is and how to use it check out [this](https://www.youtube.com/watch?v=NoFiYOqnC4o) video! He goes way more into depth than I am willing to do on a readme page.
+
+My config relies on the following programs to work properly:
+- hyprland
+- waybar
+- wofi
+- swaync
+- eww
+
+It also uses the following programs, but these are up to personal preferance so feel free to change them to whatever you prefer (you will need to update them in the configs!):
+- ghostty
+- nautilus
+- gnome-clocks
+- hyprshot
+- hyprpicker
+
+#### Example full install command:
+
+```
+sudo dnf install -y hyprland waybar wofi swaync eww ghostty nautilus gnome-clocks hyprshot hyprpicker
+```
+
+*Some of the programs may not be in the default repos depending on your distro, I have linked to the main sites of every tool on this page so if you are hit with any "package not found" errors please check their website for specific instructions*
+
+# Screenshots:
 
 ### Night Mode
 ![Screenshot 1](/Resources/Screenshots/Screenshot1.png)
@@ -39,7 +64,7 @@ Background Photo by [Antonia Glaskova](https://unsplash.com/photos/a-group-of-pi
 
 Background Photo By [Zhaoli JIN](https://unsplash.com/photos/beige-and-black-lamp-on-green-tree-during-nighttime-e4I2ktXz5cA)
 
-(The background switcher button is in the top left corner, script can be found [here](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/scripts/toggle_wallpaper.sh). I didn't feel like a full theme switcher would be needed, and the theming I have done works great for both so this was the perfect in between for me)
+(The background switcher button is in the top left corner, script can be found [here](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/scripts/toggle_wallpaper.sh). I didn't feel like a full theme switcher would be needed, and the theming I have done works great for both so this was the perfect inbetween for me)
 
 ## Main Tools Used:
 
@@ -85,9 +110,24 @@ The app launcher I've been using. honestly I'm not completely sold on it though.
 
 ### [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
 
-![SwawNC](/Resources/Screenshots/Swaync.png)
+![SwayNC](/Resources/Screenshots/Swaync.png)
 
 My notification center. This one needs the most work to be honest, it was my most recent addition to the set up abd is the lease customized (for now)
+
+### [eww](https://github.com/elkowar/eww)
+
+#### Calendar Widget:
+
+Eww is a pretty interesting and powerful widget tool I came across while looking for a good way to show custom pop ups that weren't just notifications. I'm probably not using it to it's full potential, but I am very happy with what I was able to do with it.
+
+![Calendar](/Resources/Screenshots/ewwCal.png)
+
+#### Wallpaper Switching Overlays:
+
+![Calendar](/Resources/Screenshots/popupNight.png)
+
+![Calendar](/Resources/Screenshots/popupDay.png)
+
 
 ### [Ghostty](https://ghostty.org/)
 
@@ -121,9 +161,8 @@ bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
 
 ## Whats Left?
 
-- [ ] Clean up notifications center (it's mostly unfinished)
+- [x] Clean up notifications center (it's mostly unfinished)
   - [x] Load in animation
-  - [ ] "chat bubble" style tail on the bottom
 - [x] Animations for wofi start (And maybe theme it more like spotlight search)
 - [x] Background change animation? (Not nessesary but would be nice)
 - [x] Power menu
