@@ -14,12 +14,26 @@ STATE=$(cat "$STATE_FILE")
 
 if [ "$STATE" = "snow" ]; then
     hyprctl hyprpaper reload "$WALLPAPER2"
+    echo "moon" > "$STATE_FILE"
+    
+    eww update wallpaper_mode="moon"
+    eww open wallpaper_popup
     hyprctl hyprpaper wallpaper "DP-3, $WALLPAPER2"
     hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER2"
-    echo "moon" > "$STATE_FILE"
+
+
+    sleep 2
+    eww close wallpaper_popup
+
 else
     hyprctl hyprpaper reload "$WALLPAPER1"
+    echo "snow" > "$STATE_FILE"
+
+    eww update wallpaper_mode="snow"
+    eww open wallpaper_popup
     hyprctl hyprpaper wallpaper "DP-3, $WALLPAPER1"
     hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER1"
-    echo "snow" > "$STATE_FILE"
+
+    sleep 2
+    eww close wallpaper_popup
 fi

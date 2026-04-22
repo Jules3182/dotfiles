@@ -1,0 +1,35 @@
+* {
+  font-family: "Symbols Nerd Font", sans-serif;
+}
+
+.wallpaper_popup {
+    background: rgba(29, 31, 40, 0.65);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    min-width: 160px;
+    min-height: 200px;
+  }
+  
+  .icon {
+    font-family: "Symbols Nerd Font";
+    font-size: 64px;
+    padding-top: 20px;
+    animation: slideIn 1s ease-out forwards;
+  }
+  
+  .text {
+    font-size: 18px;
+    color: #ffffff;
+  }
+  
+.cal {  
+  background: rgba(29, 31, 40, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 10px 10px 0px 10px;
+  margin-bottom: 0px;
+}
+
+.calendar-window {
+  background: transparent;
+}

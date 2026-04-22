@@ -29,7 +29,8 @@
   },
   "custom/date": {
     "exec": "date +'%-m/%-d'",
-    "interval": 60
+    "interval": 60,
+    "on-click": "eww active-windows | grep calendar-window  && eww close calendar-window  || eww open calendar-window"
   },
   "cpu": {
     "format": "CPU: {}%"

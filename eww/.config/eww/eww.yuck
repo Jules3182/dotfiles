@@ -1,0 +1,47 @@
+(defvar wallpaper_mode "snow")
+
+(defwindow wallpaper_popup
+  :namespace "eww_popup"
+  :monitor 0
+  :geometry (geometry :x "50%" :y "50%" :anchor "center")
+  :stacking "overlay"
+  :focusable false
+  :exclusive false
+
+  (box :class "popup"
+    :orientation "v"
+    :spacing 10
+    :halign "center"
+    :valign "center"
+
+    (label
+      :class "icon"
+      :text { wallpaper_mode == "moon" ? "" : "" })
+
+    (label
+      :class "text"
+      :text { wallpaper_mode == "moon" ? "Night Mode" : "Day Mode" })
+  )
+)
+
+(defpoll current-year :interval "1m" "date +'%Y'")
+(defpoll current-month :interval "1m" "date +'%m'")
+(defpoll current-day :interval "1m" "date +'%d'")
+
+(defwidget cal []
+  (box :class "cal-box"
+       :orientation "v"
+       :space-evenly false
+       (calendar :class "cal"
+                 :month current-month
+                 :year current-year
+                 :day current-day)
+  )
+)
+
+(defwindow calendar-window
+    :monitor 0
+    :wm-ignore true
+    :geometry (geometry :x "8px" :y "0px" :width "400px" :height "360px" :anchor "top center")
+    (cal)
+)
