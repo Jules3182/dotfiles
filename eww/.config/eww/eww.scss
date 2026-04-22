@@ -10,26 +10,73 @@
     min-height: 200px;
   }
   
-  .icon {
+.icon {
     font-family: "Symbols Nerd Font";
     font-size: 64px;
     padding-top: 20px;
     animation: slideIn 1s ease-out forwards;
-  }
+}
   
-  .text {
+.text {
     font-size: 18px;
     color: #ffffff;
-  }
-  
+}
+
+// Calendar stuff
+
 .cal {  
   background: rgba(29, 31, 40, 0.65);
   border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
-  padding: 10px 10px 0px 10px;
   margin-bottom: 0px;
+  padding: 10px 10px 0px 10px;
 }
 
+.cal .day-name {
+  padding: 4px;
+}
+.cal .day:selected {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+// weird work around for there technically being a window there.. whatever lol
 .calendar-window {
   background: transparent;
+}
+
+// Power Menu Stuff
+
+.powermenu {
+  background: rgba(29, 31, 40, 0.25);
+  margin: 1000px 2000px;
+}
+
+.menu {
+  background: transparent;
+  min-width: 400px;
+  border: none;
+}
+
+.powermenu label {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.powermenu .PMtitle {
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+.powermenu button {
+  background: transparent;
+  margin: 10px;
+  border-radius: 16px;
+  border: 2px solid transparent; // Fixes jumpy resizing when hovering
+}
+
+.powermenu button:hover {
+  background: rgba(29, 31, 40, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-weight: bold;
 }

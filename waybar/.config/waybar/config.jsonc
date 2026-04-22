@@ -46,13 +46,7 @@
   "custom/power": {
 	"format" : "⏻",
 	"tooltip": false,
-	"menu": "on-click",
-	"menu-file": "~/.config/waybar/power_menu.xml",
-	"menu-actions": {
-		"shutdown": "shutdown",
-		"reboot": "reboot",
-		"logout": "exit"
-	}
+  "on-click": "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar"
   }
 
 } 

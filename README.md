@@ -10,7 +10,7 @@
                          ██                  
                         ▀▀                   
 ```
-## My personal config files for my set up!
+# My personal config files for my set up!
 
 <video src="https://github.com/user-attachments/assets/e6688c99-f86b-4c10-a202-ef359d5a28ad" width="320" height="240" controls></video>
 
@@ -116,9 +116,13 @@ My notification center. This one needs the most work to be honest, it was my mos
 
 ### [eww](https://github.com/elkowar/eww)
 
-#### Calendar Widget:
+Eww is a pretty interesting and powerful widget tool I came across while looking for a good way to create custom pop ups that weren't just notifications. I'm probably not using it to it's full potential, but I am very happy with what I was able to do with it so far.
 
-Eww is a pretty interesting and powerful widget tool I came across while looking for a good way to show custom pop ups that weren't just notifications. I'm probably not using it to it's full potential, but I am very happy with what I was able to do with it.
+#### Custom Power Menu:
+
+![Calendar](/Resources/Screenshots/powermenu.gif)
+
+#### Custom Calander Dropdown:
 
 ![Calendar](/Resources/Screenshots/ewwCal.png)
 

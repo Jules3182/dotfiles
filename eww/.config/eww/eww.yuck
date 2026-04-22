@@ -41,7 +41,29 @@
 
 (defwindow calendar-window
     :monitor 0
+    :stacking "overlay"
     :wm-ignore true
-    :geometry (geometry :x "8px" :y "0px" :width "400px" :height "360px" :anchor "top center")
+    :geometry (geometry :x "0px" :y "0px" :width "400px" :height "212px" :anchor "top center")
     (cal)
+)
+
+(defpoll time :interval "1s"
+  "date '+%I:%M:%S %p'")
+
+(defwindow powermenu
+  :monitor 0
+  :stacking "fg"
+  
+  (powermenu_layout)
+)
+
+(defwidget powermenu_layout []
+  (box :orientation "vertical" :class "menu"
+    (label :text time :class "PMtitle")
+
+    (button :onclick "systemctl poweroff" "Power Off")
+    (button :onclick "systemctl reboot" "Reboot")
+    (button :onclick "exit" "Log Out")
+    (button :onclick "eww close powermenu && killall -SIGUSR1 waybar" "Cancel")
+  )
 )
