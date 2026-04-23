@@ -35,7 +35,8 @@
        (calendar :class "cal"
                  :month current-month
                  :year current-year
-                 :day current-day)
+                 :day current-day
+       )
   )
 )
 
