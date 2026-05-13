@@ -85,6 +85,8 @@ Everyone's favorite Tiling Window Manager. I was resistant at first, but after u
 
 ### [Waybar](https://github.com/alexays/waybar)
 
+*For the time being, you will have to build waybar from source or use waybar-git for it to work properly*
+
 #### Top Bar:
 
 **Day Mode:**
