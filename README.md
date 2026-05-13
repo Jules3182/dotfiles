@@ -11,13 +11,14 @@
                         ▀▀                   
 ```
 # My personal config files for my set up!
+### Now updated for Hyprland 0.55 (Lua)!
 
 <video src="https://github.com/user-attachments/assets/e6688c99-f86b-4c10-a202-ef359d5a28ad" width="320" height="240" controls></video>
 
 <hr>
 My goal with this set up was to build something clean and visually appealing, without being over the top *ricy*. It's my first real venture outside of a prebuilt desktop envirnment (Or really a dedicated TM for that matter) and I've been absolutely loving it. Getting under the hood and having to set up parts of the system I had taken for granted my whole life, such as notifications or background tasks for example, has been really eye opening and exciting. It really puts you in the drivers seat. To be completely honest this started as a weekend project I just wanted to mess around with to see what the hype is all about, and I haven't booted back into gnome since.
 
-With that being said, I hope you enjoy! <3
+With all that being said... I hope you enjoy! <3
 
 *These are still a work in progress, while the set up works pretty well it isn't very organized yet so just keep that in mind if you are cloning it*
 
@@ -40,13 +41,17 @@ It also uses the following programs, but these are up to personal preferance so 
 - hyprshot
 - hyprpicker
 
+Because I run nobara (Fedora based) I have to add [this](https://copr.fedorainfracloud.org/coprs/lionheartp/Hyprland) repository to DNF to be able to install Hyprland. If you aren't on a Fedora based system then the following commands are more of a guideline than anything else.
+
 #### Example full install command:
 
 ```
+sudo dnf copr enable lionheartp/Hyprland
+
+sudo dnf update
+
 sudo dnf install -y hyprland waybar wofi swaync eww ghostty nautilus gnome-clocks hyprshot hyprpicker
 ```
-
-*Some of the programs may not be in the default repos depending on your distro, I have linked to the main sites of every tool on this page so if you are hit with any "package not found" errors please check their website for specific instructions*
 
 # Screenshots:
 
@@ -149,18 +154,19 @@ The icing on my Ghostty cake. Just a fancy looking terminal prompt for me, thoug
 
 ![Fastfetch](/Resources/Screenshots/FastFetch.png)
 
-I mean what's a rice without fastfetching? I have a custom logo for it in the repo but haven't been using it lately. 
+I mean what's a rice without fastfetching? I have a custom logo for it in the repo, but haven't been using it lately. 
 
 ## Custom Additional Keybindings:
 
 ```
-bind = $mainMod, B, exec, brave-browser # Browser Shortcut
-bind = $mainMod, R, exec, ~/.config/hypr/scripts/reload.sh # Relaods waybar, hyprpaper, and swaync
-bind = $mainMod, f, fullscreen # Fullscreen
-bind = $mainMod, H, exec, killall -SIGUSR1 waybar # Hide waybar
-bind = CTRL SHIFT, page_down, exec, hyprshot -m output -o $HOME/Pictures/Screenshots # Screenshots window
-bind = CTRL SHIFT, page_up, exec, hyprshot -m region output -o $HOME/Pictures/Screenshots # Screenshot region
-bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/reload.sh")) -- Reload Script
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-browser")) -- Browser Shortcut
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("killall -SIGUSR1 waybar")) -- Hide/unhide waybars
+hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Pictures/Screenshots")) -- Full Page Screenshot
+hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide Notifications
+hl.bind("CTRL + SHIFT + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
 ```
 
 ## Whats Left?
@@ -170,6 +176,7 @@ bind = $mainMod, N, exec, swaync-client -t -sw # Open notifications
 - [x] Animations for wofi start (And maybe theme it more like spotlight search)
 - [x] Background change animation? (Not nessesary but would be nice)
 - [x] Power menu
+- [ ] Fix the weird spacing in the calendar
 
 ### Misc Tools/links:
 
