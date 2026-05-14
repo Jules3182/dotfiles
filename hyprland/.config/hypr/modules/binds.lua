@@ -12,7 +12,7 @@ local terminal    = "ghostty"
 local fileManager = "nautilus -w"
 local menu        = "wofi --show drun"
 
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod = "SUPER" -- Sets "windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind("CTRL + SHIFT + Q", hl.dsp.exec_cmd(terminal))
@@ -29,11 +29,33 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/reload.sh")) -- Reload Script
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-browser")) -- Browser Shortcut
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("killall -SIGUSR1 waybar")) -- Hide/unhide waybars
 hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Pictures/Screenshots")) -- Full Page Screenshot
 hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide Notifications
 hl.bind("CTRL + SHIFT + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
+
+-- Built out hide waybar keybind with on the fly gap adjustments to maximize screenspace when in this psudofullscreen mode
+local bar_hidden = false
+hl.bind(mainMod .. " + H", function()
+    
+    os.execute("killall -SIGUSR1 waybar")
+
+    if not bar_hidden then
+        hl.workspace_rule({ -- Sets new thinner gaps and hides bars
+            workspace = "m[DP-3]",
+            gaps_out = 4,
+            gaps_in = 2,
+        })
+        bar_hidden = true
+    else
+        hl.workspace_rule({ -- Returns gaps to normal and shows bars
+            workspace = "m[DP-3]",
+            gaps_out = { top = 5, right = 20, bottom = 0, left = 20 },
+            gaps_in = 10,
+        })
+        bar_hidden = false
+    end
+end)
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
