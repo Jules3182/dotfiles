@@ -75,9 +75,39 @@ end
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
--- Scroll through existing workspaces with mainMod + scroll
-hl.bind("CTRL + SHIFT + right", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind("CTRL + SHIFT + left",   hl.dsp.focus({ workspace = "e-1" }))
+-- Scroll through existing workspaces, expanded to be kindof fun allowing vertical and horizontal
+
+-- Slide to the right
+hl.bind("CTRL + SHIFT + right", function()
+    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade right" })
+    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade right" })
+    
+    hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+end)
+
+-- Slide to the left
+hl.bind("CTRL + SHIFT + left", function()
+    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade left" })
+    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade left" })
+    
+    hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+end)
+
+-- One hop this time
+hl.bind("CTRL + SHIFT + up", function()
+    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
+    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
+
+    hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+end)
+
+-- Downwards hop this time?
+hl.bind("CTRL + SHIFT + down", function()
+    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
+    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
+
+    hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+end)
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
