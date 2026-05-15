@@ -85,7 +85,7 @@ Everyone's favorite Tiling Window Manager. I was resistant at first, but after u
 
 #### Custom "grid" workspace scrolling:
 
-
+<video src="https://github.com/user-attachments/assets/e7938ba6-eb80-4bcc-a9ef-27f6bfd5c645" width="320" height="240" controls></video>
 
 Although it doesn't actually set up workspaces in a grid it definetly feels like they are, and frankly is just pretty fun to mess around with. You can check how I set it up in the [Binds](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/binds.lua) module of my hyprland config.
 
