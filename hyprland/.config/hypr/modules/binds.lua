@@ -83,6 +83,7 @@ hl.bind("CTRL + SHIFT + right", function()
     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade right" })
     
     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh")) -- Hacky workaround to set the animation to popin when using waybar
 end)
 
 -- Slide to the left
@@ -91,22 +92,25 @@ hl.bind("CTRL + SHIFT + left", function()
     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade left" })
     
     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
 end)
 
 -- One hop this time
 hl.bind("CTRL + SHIFT + up", function()
     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
-
+    
     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
 end)
 
 -- Downwards hop this time?
 hl.bind("CTRL + SHIFT + down", function()
     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
-
+    
     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
 end)
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
