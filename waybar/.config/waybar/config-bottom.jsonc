@@ -18,11 +18,7 @@
   },
   "tray": {
 	  "icon-size": 21,
-	  "spacing": 10//,
-//    "actions": {
-//      "on-scroll-down": "shift_up",
-//      "on-scroll-up": "shift_down"
-//    }
+	  "spacing": 10
   },
     "custom/notification": {
     "tooltip": true,

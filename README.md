@@ -53,7 +53,7 @@ sudo dnf update
 sudo dnf install -y hyprland waybar wofi swaync eww ghostty nautilus gnome-clocks hyprshot hyprpicker
 ```
 
-# Screenshots:
+# Screenshots/Features:
 
 ### Night Mode
 ![Screenshot 1](/Resources/Screenshots/Screenshot1.png)
@@ -82,6 +82,12 @@ My personal distro of choice, based on fedora and optimized for gaming and media
 ![Hyprland](/Resources/Screenshots/Hyprland.png)
 
 Everyone's favorite Tiling Window Manager. I was resistant at first, but after using it for about 10 minutes I fell in love and haven't looked back (sorry gnome)
+
+#### Custom "grid" workspace scrolling:
+
+
+
+Although it doesn't actually set up workspaces in a grid it definetly feels like they are, and frankly is just pretty fun to mess around with. You can check how I set it up in the [Binds](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/binds.lua) module of my hyprland config.
 
 ### [Waybar](https://github.com/alexays/waybar)
 
@@ -171,14 +177,16 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide
 hl.bind("CTRL + SHIFT + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
 ```
 
-## Whats Left?
+## Whats Next?
 
+- [ ] Fix the waybar tray (could just be a hyprland update bug)
+- [ ] Fix the weird spacing in the calendar
+- [x] Clicking waybar workspaces should do popin instead of the last slide direction
 - [x] Clean up notifications center (it's mostly unfinished)
   - [x] Load in animation
 - [x] Animations for wofi start (And maybe theme it more like spotlight search)
 - [x] Background change animation? (Not nessesary but would be nice)
 - [x] Power menu
-- [ ] Fix the weird spacing in the calendar
 
 ### Misc Tools/links:
 
