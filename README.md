@@ -1,4 +1,4 @@
-[![Nobara Linux](https://img.shields.io/badge/Nobara%20Linux-000?logo=nobaralinux&logoColor=fff)](#)[![Ghostty](https://custom-icon-badges.demolab.com/badge/Ghostty-0000ff?logo=ghostty_term)](#)[![CSS](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff)](#)[![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=fff)](#)
+![Nobara Linux Badge](https://img.shields.io/badge/Nobara%20Linux-000?logo=nobaralinux&logoColor=fff&style=for-the-badge)![Hyprland Badge](https://img.shields.io/badge/Hyprland-58E1FF?logo=hyprland&logoColor=000&style=for-the-badge)![Ghostty Badge](https://img.shields.io/badge/Ghostty-3551F3?logo=ghostty&logoColor=fff&style=for-the-badge)![Obsidian Badge](https://img.shields.io/badge/Obsidian-7C3AED?logo=obsidian&logoColor=fff&style=for-the-badge)![Unsplash Badge](https://img.shields.io/badge/Unsplash-000?logo=unsplash&logoColor=fff&style=for-the-badge)![Lua Badge](https://img.shields.io/badge/Lua-000080?logo=lua&logoColor=fff&style=for-the-badge)![CSS Badge](https://img.shields.io/badge/CSS-639?logo=css&logoColor=fff&style=for-the-badge)
 
 ```                                           
       ▄▄▄▄▄▄              ▄▄  ▄▄             
@@ -166,15 +166,16 @@ I mean what's a rice without fastfetching? I have a custom logo for it in the re
 
 ## Custom Additional Keybindings:
 
+Check out [binds.lua](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/binds.lua) for the full list, it's expanded quite a bit since 0.55, but here are a few of my favorite additions:
+
 ```
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/reload.sh")) -- Reload Script
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-browser")) -- Browser Shortcut
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + H", hl.dsp.exec_cmd("killall -SIGUSR1 waybar")) -- Hide/unhide waybars
 hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Pictures/Screenshots")) -- Full Page Screenshot
 hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide Notifications
-hl.bind("CTRL + SHIFT + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
+hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
 ```
 
 ## Whats Next?
