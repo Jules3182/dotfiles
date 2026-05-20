@@ -6,14 +6,21 @@
 
   "modules-left": ["memory", "cpu", "custom/gpu", "network"],
 
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": ["custom/workspaces"],
   
   "modules-right": ["tray", "custom/notification"],
+
+  "custom/workspaces": {
+    "exec": "~/.config/waybar/scripts/workspace-pages.sh",
+    "interval": 0.1,
+    "return-type": "json"
+    
+  },
 
   "hyprland/workspaces":{
     "format": "{name}",
     "persistent-workspaces": {
-      "DP-3": [ 1, 2, 3, 4, 5 ]
+      "DP-3": [ "1", "2", "3", "4", "5" ]
     }
   },
   "tray": {

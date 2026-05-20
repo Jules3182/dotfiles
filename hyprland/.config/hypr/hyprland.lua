@@ -30,3 +30,5 @@ require("modules.workspaces")
 require("modules.lookandfeel")
 
 require("modules.devices")
+
+require("modules.grid")

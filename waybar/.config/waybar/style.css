@@ -21,7 +21,7 @@ window#waybar {
 }
 
 /* shared pill style */
-#workspaces,
+#custom-workspaces,
 #clock,
 #pulseaudio,
 #network,
@@ -64,21 +64,22 @@ menuitem {
 */
 
 /* workspaces buttons inside pill */
-#workspaces button {
-  padding: 4px 12px;
+#custom-workspaces {
+  font-size: 21px;
+  /* padding: 4px 12px;
   margin: 0 2px;
-  border-radius: 8px;
+  border-radius: 8px; */
   color: #aaa;
   transition: 0.15s all ease;
 }
 
-#workspaces button.active {
+#custom-workspaces b {
   background: rgba(255,255,255,0.25);
-  color: #fff;
+  color: red;
   padding: 4px 25px;
 }
 
-#workspaces button:hover:not(.active) {
+#custom-workspaces button:hover:not(.active) {
   background: rgba(0, 0, 0, 0.45);
 }
 

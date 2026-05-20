@@ -78,41 +78,41 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 
 -- Scroll through existing workspaces, expanded to be kindof fun allowing vertical and horizontal
 
--- Slide to the right
-hl.bind(CSH .. " + right", function()
-    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade right" })
-    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade right" })
+-- -- Slide to the right
+-- hl.bind(CSH .. " + right", function()
+--     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade right" })
+--     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade right" })
     
-    hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh")) -- Hacky workaround to set the animation to popin when using waybar
-end)
+--     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+--     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh")) -- Hacky workaround to set the animation to popin when using waybar
+-- end)
 
--- Slide to the left
-hl.bind(CSH .. " + left", function()
-    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade left" })
-    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade left" })
+-- -- Slide to the left
+-- hl.bind(CSH .. " + left", function()
+--     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade left" })
+--     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade left" })
     
-    hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
-end)
+--     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+--     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+-- end)
 
--- One hop this time
-hl.bind(CSH .. " + up", function()
-    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
-    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
+-- -- One hop this time
+-- hl.bind(CSH .. " + up", function()
+--     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
+--     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
     
-    hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
-end)
+--     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+--     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+-- end)
 
--- Downwards hop this time?
-hl.bind(CSH .. " + down", function()
-    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
-    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
+-- -- Downwards hop this time?
+-- hl.bind(CSH .. " + down", function()
+--     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
+--     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
     
-    hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
-end)
+--     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+--     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+-- end)
 
 -- Scroll workspaces (Sometimes zooms in brave.. looking for a solution as it seems to just be a brave issue)
 
