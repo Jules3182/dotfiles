@@ -34,7 +34,9 @@ window#waybar {
 #custom-date,
 #custom-wallpaper,
 #custom-notification,
-#custom-power
+#custom-power,
+#bluetooth,
+#custom-gpu
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
@@ -93,23 +95,47 @@ menuitem {
   padding: 6px 10px;
 }
 
-#tray
-{
+#tray {
   padding: 0 15px 0 15px;
 }
 
-#custom-wallpaper
-{
-  border-radius: 100px;
+#custom-wallpaper {
+  border-radius: 100%;
   font-size: 15px;
 }
 
 #custom-power {
   font-size: 15px;
   padding: 0px 10px 0px 10px;
+  border-radius: 100%;
 }
 
 #custom-notification {
   font-size: 15px;
   padding: 0px 12px 0px 12px;
+  border-radius: 100%;
  }
+
+#bluetooth {
+  font-size: 15px;
+  padding: 0px 11px 0px 11px;
+  border-radius: 100%;
+  border: 1px solid rgba(90, 222, 204, 0.821);
+}
+
+#bluetooth.off, #bluetooth.disabled {
+  color: #8a8a8a;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0px 11px 0px 11px;
+  border-radius: 100%;
+}
+
+#network.vpn {
+  border: 1px solid rgba(90, 222, 204, 0.821);
+  border-radius: 100%;
+}
+ 
+#network.vpn.disconnected {
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #8a8a8a;
+}

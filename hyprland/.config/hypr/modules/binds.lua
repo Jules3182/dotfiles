@@ -138,7 +138,7 @@ hl.bind(CSH .. " + mouse:272", hl.dsp.window.move({ workspace = "e-1" }))
 
 hl.bind(CSH .. " + mouse:273", hl.dsp.window.move({ workspace = "e+1" }))
 
--- Scroll to move around windows 
+-- Scroll to move around windows (need to figure out how to make this mouse:275 + scroll)
 
 hl.bind("ALT + mouse_up", hl.dsp.window.move({ direction = "left" }))
 

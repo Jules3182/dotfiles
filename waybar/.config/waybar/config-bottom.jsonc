@@ -4,11 +4,11 @@
   "output": "DP-3",
   "position": "bottom",
 
-  "modules-left": ["tray"],
+  "modules-left": ["memory", "cpu", "custom/gpu", "network"],
 
   "modules-center": ["hyprland/workspaces"],
   
-  "modules-right": ["custom/notification"],
+  "modules-right": ["tray", "custom/notification"],
 
   "hyprland/workspaces":{
     "format": "{name}",
@@ -22,11 +22,12 @@
   },
     "custom/notification": {
     "tooltip": true,
-    "format": "",
-/*    "format": "<span size='16pt'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": {
       "notification": "",
-      "none": "󰂜",
+      "none": "󰂜"
+    },
+/*    "format": "<span size='16pt'>{icon}</span>",
       "dnd-notification": "󰂠",
       "dnd-none": "󰪓",
       "inhibited-notification": "󰂛",
@@ -40,5 +41,21 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "cpu": {
+    "format": "CPU: {}%",
+    "interval": 1
+  },
+  "custom/gpu": {
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
+    "format": "GPU: {}%",
+    "interval": 1
+  },
+  "memory": {
+    "format": "Memory: {}%"
+  },
+  "network": {
+    "format": "{bandwidthUpBits}  | {bandwidthDownBits} ",
+    "interval": 1
   }
 }
