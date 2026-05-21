@@ -14,10 +14,11 @@ text=""
 
 for i in $(seq $start $end); do
     if [ "$i" -eq "$active" ]; then
-        text+="<b>$i</b> "
+        text+="  <b>$i</b>  "
     else
-        text+="<span>$i</span> "
+        # echo "{\"class\":\"normal\"}"
+        text+="  <span>$i</span>  "
     fi
 done
 
-echo "{\"text\": \"$text\"}"
+echo "{\"text\":\"$text\",\"class\":\"items\"}"

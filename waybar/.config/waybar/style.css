@@ -22,6 +22,7 @@ window#waybar {
 
 /* shared pill style */
 #custom-workspaces,
+#workspaces,
 #clock,
 #pulseaudio,
 #network,
@@ -64,25 +65,70 @@ menuitem {
 */
 
 /* workspaces buttons inside pill */
-#custom-workspaces {
-  font-size: 21px;
-  /* padding: 4px 12px;
-  margin: 0 2px;
-  border-radius: 8px; */
-  color: #aaa;
-  transition: 0.15s all ease;
+
+#workspaces button.active {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  padding: 4px 25px;
 }
 
-#custom-workspaces b {
+#workspaces button {
+  color: #ababab;
+}
+
+#workspaces button:not(.empty) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.831);
+  border-width: 1px;
+  /* border-radius: 0; */
+}
+
+#workspaces button:nth-child(5) {
+  border-right: solid 2px #6f6f6f;
+  /* border-radius: 4px; */
+}
+
+#workspaces button:nth-child(6) {
+  margin-left: 30px;
+  /* border-radius: 4px; */
+}
+
+#workspaces button:nth-child(10) {
+  margin-right: 30px;
+  /* border-radius: 4px; */
+}
+
+#workspaces button:nth-child(11) {
+  border-left: solid 2px #6f6f6f;
+  /* border-radius: 4px; */
+}
+
+#custom-workspaces {
+  /* word-spacing: normal; */
+  letter-spacing: 3px;
+}
+
+#custom-workspaces.items{
+  font-size: 21px;
+  transition: 0.15s all ease;
+  color: white;
+  /*padding: 4px 12px;
+  margin: 0 2px;
+  border-radius: 8px; */
+}
+
+/* #custom-workspaces.items:not(p) {
+  font-size: 19px;
+  color: red;
+} */
+
+#custom-workspaces.normal {
   background: rgba(255,255,255,0.25);
   color: red;
   padding: 4px 25px;
 }
-
-#custom-workspaces button:hover:not(.active) {
+#workspaces button:hover:not(.active) {
   background: rgba(0, 0, 0, 0.45);
 }
-
 /* center clock */
 #clock {
   font-weight: 600;

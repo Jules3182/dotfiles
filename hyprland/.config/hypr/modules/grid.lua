@@ -2,14 +2,14 @@
 
 -- Sets up all of the workspaces
 
-hl.workspace_rule({ workspace = "1", persistent = true, monitor = "DP-3", default = true })
+hl.workspace_rule({ workspace = "1", persistent = true, monitor = "DP-3"})
 hl.workspace_rule({ workspace = "2", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "3", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "4", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "5", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "6", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "7", persistent = true, monitor = "DP-3" })
-hl.workspace_rule({ workspace = "8", persistent = true, monitor = "DP-3" })
+hl.workspace_rule({ workspace = "8", persistent = true, monitor = "DP-3", default = true })
 hl.workspace_rule({ workspace = "9", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "10", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "11", persistent = true, monitor = "DP-3" })
