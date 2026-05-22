@@ -1,6 +1,15 @@
--- EXPIRAMENTAL GRID LAYOUT TEST!!
+                                                                                       
+--   ▄▄▄                                                            ▄   ▄▄▄▄              
+--  █▀██  ██  ██▀▀                                                  ▀██████▀            █▄
+--    ██  ██  ██       ▄     ▄▄                                       ██   ▄ ▄    ▀▀    ██
+--    ██  ██  ██ ▄███▄ ████▄ ██ ▄█▀ ▄██▀█ ████▄ ▄▀▀█▄ ▄███▀ ▄█▀█▄     ██  ██ ████▄██ ▄████
+--    ██▄ ██▄ ██ ██ ██ ██    ████   ▀███▄ ██ ██ ▄█▀██ ██    ██▄█▀     ██  ██ ██   ██ ██ ██
+--    ▀████▀███▀▄▀███▀▄█▀   ▄██ ▀█▄█▄▄██▀▄████▀▄▀█▄██▄▀███▄▄▀█▄▄▄     ▀█████▄█▀  ▄██▄█▀███
+--                                        ██                          ▄   ██              
+--                                        ▀                           ▀████▀              
+-- [Still somewhat expirimental!]
 
--- Sets up all of the workspaces
+-- Sets up all of the persistent workspaces (5x3 grid)
 
 hl.workspace_rule({ workspace = "1", persistent = true, monitor = "DP-3"})
 hl.workspace_rule({ workspace = "2", persistent = true, monitor = "DP-3" })
@@ -18,23 +27,37 @@ hl.workspace_rule({ workspace = "13", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "14", persistent = true, monitor = "DP-3" })
 hl.workspace_rule({ workspace = "15", persistent = true, monitor = "DP-3" })
 
-local mainMod = "SUPER" -- Sets "windows" key as main modifier
+-- Sets workspace to center of the grid at launch
+hl.on("hyprland.start", function () 
+    hl.dispatch(hl.dsp.focus({ workspace = "8" }))
+end)
+
+-- Variables for keybinds
+local mainMod = "SUPER"
 local CSH = "CTRL + SHIFT"
 
 -- Slide to the right
 hl.bind(CSH .. " + right", function()
 
+    -- Gets current workspace id to determine movement logic
     local ws = hl.get_active_workspace().id
 
+    -- Checks if it's not one of the edges
     if ws ~= 5 and ws ~= 10 and ws ~= 15 then
 
+        -- Changes animation to the right slide
         hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade right" })
         hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade right" })
-    
+        
+        -- Moves up one workspace
         hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
-        hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh")) -- Hacky workaround to set the animation to popin when using waybar
+
+        -- Resets animation to popin so clicking the waybar doesn't slide in a weird direction
+        hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     end
 end)
+
+-- Repeats logic for the rest of the directions
 
 -- Slide to the left
 hl.bind(CSH .. " + left", function()
@@ -60,6 +83,7 @@ hl.bind(CSH .. " + up", function()
         hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
         hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
     
+        -- Loop to go up 5 workspaces, doing workspace = "e+5" would go up by 10 (tested with other numbers to be sure, it would just go up the maximum divisible number before hitting the max)
         for _ = 1, 5 do
             hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
         end

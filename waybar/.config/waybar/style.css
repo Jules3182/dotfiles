@@ -82,8 +82,8 @@ menuitem {
   /* border-radius: 0; */
 }
 
-#workspaces button:nth-child(5) {
-  border-right: solid 2px #6f6f6f;
+#workspaces button:nth-child(5), #workspaces button:nth-child(10), #workspaces button:nth-child(15) {
+  border-right: solid 1px white;
   /* border-radius: 4px; */
 }
 
@@ -97,8 +97,8 @@ menuitem {
   /* border-radius: 4px; */
 }
 
-#workspaces button:nth-child(11) {
-  border-left: solid 2px #6f6f6f;
+#workspaces button:nth-child(1), #workspaces button:nth-child(11), #workspaces button:nth-child(6) {
+  border-left: solid 1px white;
   /* border-radius: 4px; */
 }
 
