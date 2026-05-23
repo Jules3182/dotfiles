@@ -34,6 +34,7 @@ hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/
 hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide Notifications
 hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
+hl.bind(mainMod .. " + tab", hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh &&eww active-windows | grep overview  && eww close overview  || eww open overview && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
 
 -- Built out hide waybar keybind with on the fly gap adjustments to maximize screenspace when in this psudofullscreen mode
 local bar_hidden = false
@@ -76,6 +77,8 @@ end
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
+-- COMMENTED OUT: GO CHECK THE grid.lua MODULE FOR ALL OF THIS!
+
 -- Scroll through existing workspaces, expanded to be kindof fun allowing vertical and horizontal
 
 -- -- Slide to the right
@@ -116,21 +119,21 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 
 -- Scroll workspaces (Sometimes zooms in brave.. looking for a solution as it seems to just be a brave issue)
 
-hl.bind(CSH .. " + mouse_up", function()
-    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
-    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
+-- hl.bind(CSH .. " + mouse_up", function()
+--     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
+--     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
     
-    hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
-end)
+--     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+--     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+-- end)
 
-hl.bind(CSH .. " + mouse_down", function()
-    hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
-    hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
+-- hl.bind(CSH .. " + mouse_down", function()
+--     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
+--     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
     
-    hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
-end)
+--     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+--     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+-- end)
 
 -- Moving windows up and down workspaces with left/right click
 
