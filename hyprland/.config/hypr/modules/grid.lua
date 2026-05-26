@@ -83,9 +83,11 @@ hl.bind(CSH .. " + up", function()
         hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
         hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
     
-        -- Loop to go up 5 workspaces, doing workspace = "e+5" would go up by 10 (tested with other numbers to be sure, it would just go up the maximum divisible number before hitting the max)
-        for _ = 1, 5 do
-            hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+        local moved = true
+
+        if moved then
+            hl.dispatch(hl.dsp.focus({ workspace = "e-5" }))
+            moved = false
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
@@ -101,8 +103,11 @@ hl.bind(CSH .. " + down", function()
         hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
         hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
     
-        for _ = 1, 5 do
-            hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+        local moved = true
+
+        if moved then
+            hl.dispatch(hl.dsp.focus({ workspace = "e+5" }))
+            moved = false
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
@@ -119,9 +124,11 @@ hl.bind(CSH .. " + mouse_down", function()
         hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
         hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
     
-        -- Loop to go up 5 workspaces, doing workspace = "e+5" would go up by 10 (tested with other numbers to be sure, it would just go up the maximum divisible number before hitting the max)
-        for _ = 1, 5 do
-            hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
+        local moved = true
+
+        if moved then
+            hl.dispatch(hl.dsp.focus({ workspace = "e-5" }))
+            moved = false
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
@@ -136,8 +143,11 @@ hl.bind(CSH .. " + mouse_up", function()
         hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
         hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
     
-        for _ = 1, 5 do
-            hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
+        local moved = true
+
+        if moved then
+            hl.dispatch(hl.dsp.focus({ workspace = "e+5" }))
+            moved = false
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
