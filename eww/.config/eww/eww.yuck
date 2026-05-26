@@ -1,4 +1,21 @@
 (defvar wallpaper_mode "snow")
+(defvar ws1icons "")
+(defvar ws2icons "")
+(defvar ws3icons "")
+(defvar ws4icons "")
+(defvar ws5icons "")
+
+(defvar ws6icons "")
+(defvar ws7icons "")
+(defvar ws8icons "")
+(defvar ws9icons "")
+(defvar ws10icons "")
+
+(defvar ws11icons "")
+(defvar ws12icons "")
+(defvar ws13icons "")
+(defvar ws14icons "")
+(defvar ws15icons "")
 
 (defwindow wallpaper_popup
   :namespace "eww_popup"
@@ -66,5 +83,201 @@
     (button :onclick "systemctl reboot" "Reboot")
     (button :onclick "exit" "Log Out")
     (button :onclick "eww close powermenu && killall -SIGUSR1 waybar" "Cancel")
+  )
+)
+
+(defwindow overview
+  :monitor 0
+  :stacking "fg"
+  
+  (grid_overview)
+)
+
+(defwidget grid_overview []
+  (box :orientation "vertical" :class "grid" :space-evenly true
+    (label :text "Workspace Overview" :class "ovrtxt")
+
+    (box :orientation "horizontal"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"1\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "1")
+          (label :text ws1icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"2\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "2")
+          (label :text ws2icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"3\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "3")
+          (label :text ws3icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"4\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "4")
+          (label :text ws4icons :class "icons")
+        )
+      )
+
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"5\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "5")
+          (label :text ws5icons :class "icons")
+        )
+      )
+    )
+
+    (box :orientation "horizontal"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"6\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "6")
+          (label :text ws6icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"7\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "7")
+          (label :text ws7icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"8\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "8")
+          (label :text ws8icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"9\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "9")
+          (label :text ws9icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"10\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "10")
+          (label :text ws10icons :class "icons")
+        )
+      )
+    )
+
+    (box :orientation "horizontal"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"11\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "11")
+          (label :text ws11icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"12\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "12")
+          (label :text ws12icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"13\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "13")
+          (label :text ws13icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"14\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "14")
+          (label :text ws14icons :class "icons")
+        )
+      )
+
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"15\" }))' && eww close overview && killall -SIGUSR1 waybar"
+        (box :orientation "vertical"
+          (label :text "15")
+          (label :text ws5icons :class "icons")
+        )
+      )
+    )
+
+  )
+)
+
+(defpoll active_ws
+  :interval "200ms"
+  `hyprctl activeworkspace -j | jq '.id'`)
+
+(defwindow minimap
+  :monitor 0
+  :stacking "overlay"
+  
+  (minimap)
+)
+
+(defwidget minimap []
+  (box :orientation "vertical" :class "grid" :space-evenly true
+  
+    (box :orientation "horizontal"
+      (button
+        :class "${active_ws == 1 ? "active" : "inactive"}"
+        "1")
+      (button
+        :class "${active_ws == 2 ? "active" : "inactive"}"
+        "2")
+      (button
+        :class "${active_ws == 3 ? "active" : "inactive"}"
+        "3")
+      (button
+        :class "${active_ws == 4 ? "active" : "inactive"}"
+        "4")
+      (button
+        :class "${active_ws == 5 ? "active" : "inactive"}"
+        "5")
+    )
+
+    (box :orientation "horizontal"
+      (button
+        :class "${active_ws == 6 ? "active" : "inactive"}"
+        "6")
+      (button
+        :class "${active_ws == 7 ? "active" : "inactive"}"
+        "7")
+      (button
+        :class "${active_ws == 8 ? "active" : "inactive"}"
+        "8")
+      (button
+        :class "${active_ws == 9 ? "active" : "inactive"}"
+        "9")
+      (button
+        :class "${active_ws == 10 ? "active" : "inactive"}"
+        "10")
+    )
+
+    (box :orientation "horizontal"
+      (button
+        :class "${active_ws == 11 ? "active" : "inactive"}"
+        "11")
+      (button
+        :class "${active_ws == 12 ? "active" : "inactive"}"
+        "12")
+      (button
+        :class "${active_ws == 13 ? "active" : "inactive"}"
+        "13")
+      (button
+        :class "${active_ws == 14 ? "active" : "inactive"}"
+        "14")
+      (button
+        :class "${active_ws == 15 ? "active" : "inactive"}"
+        "15")
+    )
   )
 )

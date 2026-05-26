@@ -81,3 +81,61 @@
   border: 2px solid rgba(255, 255, 255, 0.1);
   font-weight: bold;
 }
+
+// Overview Menu Stuff
+
+.overview {
+  background: rgba(29, 31, 40, 0.25);
+  margin: 1000px 2000px;
+}
+
+.grid {
+  background: transparent;
+  min-width: 400px;
+  border: none;
+}
+
+.overview label {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.overview .ovrtxt {
+  font-size: 60px;
+}
+
+.overview .icons {
+  color: rgb(205, 205, 205);
+}
+
+.overview button {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 90px 55px 90px;
+  margin: 20px;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.overview button:hover {
+  background: rgba(29, 31, 40, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+}
+
+// Minimap stuff
+
+.minimap {
+  background-color: transparent;
+}
+
+.minimap button {
+  background: black;
+  padding: 10px 25px 10px 25px;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+.minimap button.active {
+  border: 2px solid #5adecd;
+  color: #5adecd;
+}
