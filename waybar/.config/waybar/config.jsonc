@@ -10,7 +10,8 @@
   "clock": {
     "tooltip": false,
     "format": "{:%I:%M:%S}",
-    "interval": 1
+    "interval": 1,
+    "on-click": "gnome-clocks"
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
@@ -32,12 +33,16 @@
 },
   "custom/day": {
     "exec": "date +'%a'",
-    "interval": 60
+    "interval": 60,
+    "on-click": "gtk-launch WebApp-Reminders0631",
+    "tooltip-format": "Today's To Do"
   },
   "custom/date": {
     "exec": "date +'%-m/%-d'",
     "interval": 60,
-    "on-click": "eww active-windows | grep calendar-window  && eww close calendar-window  || eww open calendar-window"
+    "on-click": "eww active-windows | grep calendar-window  && eww close calendar-window  || eww open calendar-window",
+    "on-click-right": "gnome-calendar",
+    "tooltip-format": "Right Click to open calendar"
   },
   "custom/wallpaper": {
     "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",

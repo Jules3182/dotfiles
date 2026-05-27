@@ -1,6 +1,7 @@
 * {
   font-family: "Symbols Nerd Font", sans-serif;
   font-size: 14px;
+  font-feature-settings: "tnum";
   border: none;
 }
 
@@ -72,9 +73,19 @@ menuitem {
   padding: 4px 25px;
 }
 
+#workspaces {
+  border-radius: 12px;
+  padding: 3px 3px;
+}
+
 #workspaces button {
   color: #ababab;
 }
+/* 
+#workspaces button:nth-child(n+1):nth-child(-n+5) {
+  background: rgba(20, 20, 20, 0.65);
+  border: 1px solid rgba(255,255,255,0.08);
+} */
 
 #workspaces button:not(.empty) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.831);
@@ -167,6 +178,10 @@ menuitem {
   font-size: 15px;
   padding: 0px 11px 0px 11px;
   border-radius: 100%;
+  border: 1px solid white;
+}
+
+#bluetooth.connected {
   border: 1px solid rgba(90, 222, 204, 0.821);
 }
 

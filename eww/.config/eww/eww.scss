@@ -101,15 +101,17 @@
 }
 
 .overview .ovrtxt {
-  font-size: 60px;
+  font-size: 50px;
+  color: rgba(205, 205, 205, 0.814);
 }
 
 .overview .icons {
   color: rgb(205, 205, 205);
+  letter-spacing: 10px;
 }
 
 .overview button {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.256);
   padding: 40px 90px 55px 90px;
   margin: 20px;
   border-radius: 16px;
