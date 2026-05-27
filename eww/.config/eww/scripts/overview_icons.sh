@@ -15,34 +15,40 @@ for ws in $(seq 1 15); do
 
         case "$class" in
             brave-browser)
-                icon="󰖟 "
+                icon="󰖟"
                 ;;
             com.mitchellh.ghostty)
-                icon=" "
+                icon=""
                 ;;
             org.gnome.nautilus)
-                icon=" "
+                icon=""
                 ;;
             brave-localhost__-default)
-                icon="󰨞 "
+                icon="󰨞"
                 ;;
             discord)
-                icon=" "
+                icon=""
                 ;;
             steam)
-                icon=" "
+                icon=""
                 ;;
             blender)
-                icon=" "
+                icon=""
                 ;;
             obsidian)
-                icon="󰎚 "
+                icon="󰎚"
                 ;;
             artix*)
-                icon="󰞇 "
+                icon="󰞇"
+                ;;
+            blueman*)
+                icon="󰂯"
+                ;;
+            mullvad*)
+                icon=""
                 ;;
             *)
-                icon="󰘔 "
+                icon="󰘔"
                 ;;
         esac
 

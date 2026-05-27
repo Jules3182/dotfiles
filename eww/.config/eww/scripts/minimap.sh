@@ -3,7 +3,8 @@
 PIDFILE="/tmp/eww-minimap.pid"
 
 # Opens only if closed
-eww windows | grep -q minimap || eww open minimap
+eww windows | grep -q minimap || hyprctl eval 'hl.layer_rule({ match = { namespace = "gtk-layer-shell" }, blur = true, ignore_alpha = 0.1, animation = "none"})' && eww open minimap
+
 
 # Resets timer
 if [ -f "$PIDFILE" ]; then
