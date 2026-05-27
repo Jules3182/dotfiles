@@ -8,17 +8,19 @@
 --                      ██                            
 --                    ▀▀▀                             
 
-local terminal    = "ghostty"
-local fileManager = "nautilus -w"
-local menu        = "wofi --show drun"
+local terminal      = "ghostty"
+local fileManager   = "nautilus -w"
+local menu          = "wofi --show drun"
+local browser       = "brave-browser"
+local notifications = "swaync-client -t -sw"
+local llm           = "ghostty -e ollama run gemma4"
+local ide           = "brave-localhost__-default" -- Code server accessed on machine
 
 local mainMod = "SUPER" -- Sets "windows" key as main modifier
 local CSH = "CTRL + SHIFT" -- My ctrl + shift variable.. I just use it so much but also didn't want to change the main mod
 
--- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(CSH .. " + Q", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(CSH .. " + D", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
+hl.bind(CSH .. " + D", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(CSH .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(CSH .. " + Z", hl.dsp.exec_cmd(menu))
@@ -28,13 +30,26 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 
 -- My Custom Additions
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/reload.sh")) -- Reload Script
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-browser")) -- Browser Shortcut
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser)) -- Browser Shortcut
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen()) -- Quick Fullscreen
 hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Pictures/Screenshots")) -- Full Page Screenshot
 hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide Notifications
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notifications)) -- Show/hide Notifications
 hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
-hl.bind(mainMod .. " + tab", hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh &&eww active-windows | grep overview  && eww close overview  || eww open overview && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
+hl.bind(CSH .. " + O", hl.dsp.exec_cmd(llm, { float = true})) -- Quick floating Ollama bind
+
+-- Overview with submap for esc closing
+hl.bind(mainMod .. " + TAB", function()
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh && eww active-windows | grep -q overview && eww close overview || eww open overview && killall -SIGUSR1 waybar"))
+    hl.dispatch(hl.dsp.submap("overview"))
+end)
+
+hl.define_submap("overview", function()
+    hl.bind("escape", function()
+        hl.dispatch(hl.dsp.exec_cmd("eww close overview && killall -SIGUSR1 waybar"))
+        hl.dispatch(hl.dsp.submap("reset"))
+    end)
+end)
 
 -- Built out hide waybar keybind with on the fly gap adjustments to maximize screenspace when in this psudofullscreen mode
 local bar_hidden = false
@@ -65,6 +80,62 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
+-- Example special workspace (scratchpad)
+hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+
+-- COMMENTED OUT WORKSPACE NAVIGATION: GO CHECK THE grid.lua MODULE FOR ALL OF THIS!
+
+-- Moving windows up and down workspaces with left/right click
+
+hl.bind(CSH .. " + mouse:272", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(CSH .. " + mouse:273", hl.dsp.window.move({ workspace = "e+1" }))
+
+-- Quick Nav Mode! (Because having it normally was messing with the way I use vs code, so making a submap made sense to snap into a new mode)
+
+hl.bind("CTRL + TAB", function()
+    hl.dispatch(hl.dsp.submap("quickNav"))
+    -- Little notification pop up to show when it is active
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 200000 \"rgb(ffffff)\" \"Quick Nav Enabled\""))
+    -- Changes around some of the look and feel to make it more obvious what's going on
+    hl.config({general = {border_size = 3}, decoration = {inactive_opacity = 0.4}})
+    hl.window_rule({ match   = { class = "brave-localhost__-Default" }, opacity = "override 0.85 override 0.4 override"})
+    hl.window_rule({ match   = { class = "obsidian" }, opacity = "override 0.85 override 0.4 override"})
+end)
+
+hl.define_submap("quickNav", function()
+
+    -- Arrows to quickly navigate windows
+    hl.bind("up", hl.dsp.focus({ direction = "up" }))
+    hl.bind("down", hl.dsp.focus({ direction = "down" }))
+    hl.bind("left", hl.dsp.focus({ direction = "left" }))
+    hl.bind("right", hl.dsp.focus({ direction = "right" }))
+    
+    -- Arrows to quickly move around windows with ctrl
+    hl.bind("CTRL + up", hl.dsp.window.move({ direction = "up" }))
+    hl.bind("CTRL + down", hl.dsp.window.move({ direction = "down" }))
+    hl.bind("CTRL + left", hl.dsp.window.move({ direction = "left" }))
+    hl.bind("CTRL + right", hl.dsp.window.move({ direction = "right" }))
+    
+    -- Quick close while in this mode
+    hl.bind("D", hl.dsp.window.close())
+    
+    -- Exit quick nav mode
+    hl.bind("escape", function()
+        hl.dispatch(hl.dsp.submap("reset"))
+        -- Dismisses the notification
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl dismissnotify"))
+        -- Resets look and feel
+        hl.config({general = {border_size = 1}, decoration = {inactive_opacity = 1}})
+        hl.window_rule({ match   = { class = "brave-localhost__-Default" }, opacity = "override 0.85 override 0.85 override"})
+        hl.window_rule({ match   = { class = "obsidian" }, opacity = "override 0.85 override 0.85 override"})
+    end)
+end)
+
+-- Move/resize windows with mainMod + LMB/RMB and dragging
+hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
+hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
@@ -72,84 +143,6 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
-
--- COMMENTED OUT: GO CHECK THE grid.lua MODULE FOR ALL OF THIS!
-
--- Scroll through existing workspaces, expanded to be kindof fun allowing vertical and horizontal
-
--- -- Slide to the right
--- hl.bind(CSH .. " + right", function()
---     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade right" })
---     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade right" })
-    
---     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
---     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh")) -- Hacky workaround to set the animation to popin when using waybar
--- end)
-
--- -- Slide to the left
--- hl.bind(CSH .. " + left", function()
---     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade left" })
---     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade left" })
-    
---     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
---     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
--- end)
-
--- -- One hop this time
--- hl.bind(CSH .. " + up", function()
---     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
---     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
-    
---     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
---     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
--- end)
-
--- -- Downwards hop this time?
--- hl.bind(CSH .. " + down", function()
---     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
---     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
-    
---     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
---     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
--- end)
-
--- Scroll workspaces (Sometimes zooms in brave.. looking for a solution as it seems to just be a brave issue)
-
--- hl.bind(CSH .. " + mouse_up", function()
---     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade bottom" })
---     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade bottom" })
-    
---     hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
---     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
--- end)
-
--- hl.bind(CSH .. " + mouse_down", function()
---     hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade top" })
---     hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade top" })
-    
---     hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))
---     hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
--- end)
-
--- Moving windows up and down workspaces with left/right click
-
-hl.bind(CSH .. " + mouse:272", hl.dsp.window.move({ workspace = "e-1" }))
-
-hl.bind(CSH .. " + mouse:273", hl.dsp.window.move({ workspace = "e+1" }))
-
--- Scroll to move around windows (need to figure out how to make this mouse:275 + scroll)
-
-hl.bind("ALT + mouse_up", hl.dsp.window.move({ direction = "left" }))
-
-hl.bind("ALT + mouse_down", hl.dsp.window.move({ direction = "right" }))
-
--- Move/resize windows with mainMod + LMB/RMB and dragging
-hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
-hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })

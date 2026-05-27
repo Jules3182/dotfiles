@@ -193,10 +193,5 @@ hl.bind(CSH .. " + mouse:275", function()
 end)
 
 hl.on("workspace.active", function()
-    hl.layer_rule({
-        match        = { namespace = "gtk-layer-shell" },
-        blur         = fasle,
-        animation = "none",
-    })
     hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/minimap.sh"))
 end)
