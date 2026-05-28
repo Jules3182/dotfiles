@@ -91,20 +91,22 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 hl.bind(CSH .. " + mouse:272", hl.dsp.window.move({ workspace = "e-1" }))
 hl.bind(CSH .. " + mouse:273", hl.dsp.window.move({ workspace = "e+1" }))
 
--- Quick Nav Mode! (Because having it normally was messing with the way I use vs code, so making a submap made sense to snap into a new mode)
+-- Quick Nav Mode! (Because having these bindings active normally was messing with the way I use vs code, so making a submap made sense to snap into a new mode)
 
 hl.bind("CTRL + TAB", function()
     hl.dispatch(hl.dsp.submap("quickNav"))
     -- Little notification pop up to show when it is active
-    hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 200000 \"rgb(ffffff)\" \"Quick Nav Enabled\""))
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 200000 \"rgb(5adecd)\" \"Quick Nav Enabled!\""))
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(ffffff)\" \"Press h for help\""))
     -- Changes around some of the look and feel to make it more obvious what's going on
-    hl.config({general = {border_size = 3}, decoration = {inactive_opacity = 0.4}})
-    hl.window_rule({ match   = { class = "brave-localhost__-Default" }, opacity = "override 0.85 override 0.4 override"})
-    hl.window_rule({ match   = { class = "obsidian" }, opacity = "override 0.85 override 0.4 override"})
+    hl.config({general = {border_size = 3}, decoration = {active_opacity = 0.9, inactive_opacity = 0.4}})
+    hl.window_rule({ match   = { class = "brave-localhost__-Default" }, opacity = "override 0.9 override 0.4 override"})
+    hl.window_rule({ match   = { class = "obsidian" }, opacity = "override 0.8 override 0.9 override"})
+    -- os.execute("killall -SIGUSR1 waybar")
 end)
 
 hl.define_submap("quickNav", function()
-
+    
     -- Arrows to quickly navigate windows
     hl.bind("up", hl.dsp.focus({ direction = "up" }))
     hl.bind("down", hl.dsp.focus({ direction = "down" }))
@@ -117,19 +119,54 @@ hl.define_submap("quickNav", function()
     hl.bind("CTRL + left", hl.dsp.window.move({ direction = "left" }))
     hl.bind("CTRL + right", hl.dsp.window.move({ direction = "right" }))
     
-    -- Quick close while in this mode
-    hl.bind("D", hl.dsp.window.close())
+    -- Window Resizing with alt + arrow keys
+    hl.bind("ALT + right", hl.dsp.window.resize({ x = 30, y = 0, relative = true}), { repeating = true })
+    hl.bind("ALT + left", hl.dsp.window.resize({ x = -30, y = 0, relative = true}), { repeating = true })
+    hl.bind("ALT + up", hl.dsp.window.resize({ x = 0, y = -30, relative = true}), { repeating = true })
+    hl.bind("ALT + down", hl.dsp.window.resize({ x = 0, y = 30, relative = true}), { repeating = true })
     
-    -- Exit quick nav mode
-    hl.bind("escape", function()
+    -- Quick actions while in this mode
+    hl.bind("D", hl.dsp.window.close())
+    hl.bind("Q", hl.dsp.exec_cmd(terminal))
+    hl.bind("E", hl.dsp.exec_cmd(fileManager))
+
+    -- Quick little help menu with notify
+    local helpMenu = true
+    hl.bind("H", function()
+        if helpMenu then
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"Use the arrow keys to navigate your windows\""))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"Hold CTRL to move them\""))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"Hold ALT to resize them\""))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"D closes windows\""))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"Q opens the terminal\""))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"E opens the file explorer\""))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 200000 \"rgb(ffffff)\" \"To exit left click, press escape, or enter\""))
+            helpMenu = false
+        else
+            -- Gets rid of all notifications and shows the original messages again
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl dismissnotify"))
+            hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 200000 \"rgb(5adecd)\" \"Quick Nav Enabled!\""))
+            helpMenu = true
+        end
+    end)
+    
+    -- Function to handle exiting the submap and resetting changes
+    function exitQN()
         hl.dispatch(hl.dsp.submap("reset"))
-        -- Dismisses the notification
+        -- Dismisses the notifications
         hl.dispatch(hl.dsp.exec_cmd("hyprctl dismissnotify"))
         -- Resets look and feel
-        hl.config({general = {border_size = 1}, decoration = {inactive_opacity = 1}})
+        hl.config({general = {border_size = 1}, decoration = {active_opacity = 1, inactive_opacity = 1}})
         hl.window_rule({ match   = { class = "brave-localhost__-Default" }, opacity = "override 0.85 override 0.85 override"})
         hl.window_rule({ match   = { class = "obsidian" }, opacity = "override 0.85 override 0.85 override"})
-    end)
+        helpMenu = true -- Resets this variable incase the user exits while the help menu is open
+    end
+
+    -- Binds for various ways to exit Quick Nav
+    hl.bind("escape", exitQN)
+    hl.bind("return", exitQN)
+    hl.bind("mouse:272", exitQN)
+
 end)
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
