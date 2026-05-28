@@ -1,5 +1,5 @@
 * {
-  font-family: "Symbols Nerd Font", sans-serif;
+  font-family: "Symbols Nerd Font Propo", sans-serif;
   font-size: 14px;
   font-feature-settings: "tnum";
   border: none;
@@ -163,15 +163,16 @@ menuitem {
 }
 
 #custom-power {
-  font-size: 15px;
+  font-size: 25px;
   padding: 0px 10px 0px 10px;
   border-radius: 100%;
 }
 
 #custom-notification {
   font-size: 15px;
-  padding: 0px 12px 0px 12px;
-  border-radius: 100%;
+  padding: 0px 13px 0px 11px;
+  border-radius: 50%;
+  min-width: 15px;
  }
 
 #bluetooth {
@@ -192,9 +193,21 @@ menuitem {
   border-radius: 100%;
 }
 
+
+#custom-wallpaper, #custom-power, #bluetooth, #network.vpn, #bluetooth.off, #bluetooth.disabled {
+  padding: unset;
+  border-radius: 50%;
+
+  min-width: 35px;
+  min-height: 35px;
+}
+
+
 #network.vpn {
+  font-size: 100%;
   border: 1px solid rgba(90, 222, 204, 0.821);
-  border-radius: 100%;
+  border-radius: 50%;
+  padding-right: 2px;
 }
  
 #network.vpn.disconnected {
