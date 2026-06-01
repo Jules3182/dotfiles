@@ -46,6 +46,7 @@ hl.config({
             size      = 6,
             passes    = 2,
             vibrancy  = 0.1696,
+            xray      = true,
         },
     },
 
@@ -122,13 +123,15 @@ hl.layer_rule({
   blur         = true,
   ignore_alpha = 0.5,
   animation = "slide right",
+  xray         = true,
 })
 
 hl.layer_rule({
   match        = { namespace = "gtk-layer-shell" },
   blur         = true,
   ignore_alpha = 0.1,
-  animation = "slide top",
+  animation    = "slide top",
+  xray         = true,
 })
 
 -- Fix wacky popin background changes

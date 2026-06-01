@@ -54,6 +54,8 @@ hl.bind(CSH .. " + right", function()
 
         -- Resets animation to popin so clicking the waybar doesn't slide in a weird direction
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -71,6 +73,8 @@ hl.bind(CSH .. " + left", function()
     
         hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -91,6 +95,8 @@ hl.bind(CSH .. " + up", function()
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -111,6 +117,8 @@ hl.bind(CSH .. " + down", function()
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -132,6 +140,8 @@ hl.bind(CSH .. " + mouse_down", function()
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -151,6 +161,8 @@ hl.bind(CSH .. " + mouse_up", function()
         end
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -172,6 +184,8 @@ hl.bind(CSH .. " + mouse:276", function()
 
         -- Resets animation to popin so clicking the waybar doesn't slide in a weird direction
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
@@ -189,9 +203,12 @@ hl.bind(CSH .. " + mouse:275", function()
     
         hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
     end
 end)
 
+-- Displays the grid mini map when navigating workspaces
 hl.on("workspace.active", function()
     hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/minimap.sh"))
 end)

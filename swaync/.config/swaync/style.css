@@ -15,7 +15,7 @@
 .control-center {
     background: @noti-bg;
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px;
+    border-radius: 14px 0px 0px 14px;
 }
 
 .control-center .notification-row:focus,

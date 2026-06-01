@@ -35,18 +35,18 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen()) -- Quick Fullscreen
 hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Pictures/Screenshots")) -- Full Page Screenshot
 hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notifications)) -- Show/hide Notifications
-hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
+hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu")) -- Show/Hide powermenu
 hl.bind(CSH .. " + O", hl.dsp.exec_cmd(llm, { float = true})) -- Quick floating Ollama bind
 
 -- Overview with submap for esc closing
 hl.bind(mainMod .. " + TAB", function()
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh && eww active-windows | grep -q overview && eww close overview || eww open overview && killall -SIGUSR1 waybar"))
+    hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh && eww open overview"))
     hl.dispatch(hl.dsp.submap("overview"))
 end)
 
 hl.define_submap("overview", function()
     hl.bind("escape", function()
-        hl.dispatch(hl.dsp.exec_cmd("eww close overview && killall -SIGUSR1 waybar"))
+        hl.dispatch(hl.dsp.exec_cmd("eww close overview"))
         hl.dispatch(hl.dsp.submap("reset"))
     end)
 end)

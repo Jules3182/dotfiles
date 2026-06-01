@@ -52,7 +52,7 @@
   "custom/power": {
 	"format" : "⏻",
 	"tooltip": false,
-  "on-click": "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar"
+  "on-click": "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu"
   },
   "network#vpn": {
     "interface": "wg0-mullvad",

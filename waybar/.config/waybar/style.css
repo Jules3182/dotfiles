@@ -12,13 +12,13 @@ window#waybar {
 }
 
 .modules-right {
-    margin: 2px 12px 0 0;
+    margin: 2px 2px 0 0;
 }
 .modules-center {
     margin: 2px 0 0 0;
 }
 .modules-left {
-    margin: 2px 0 0 12px;
+    margin: 2px 0 0 2px;
 }
 
 /* shared pill style */
