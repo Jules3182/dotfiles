@@ -104,6 +104,15 @@ hl.window_rule({
   opacity = "override 0.85 override 0.85 override",
 })
 
+hl.window_rule({
+    match       = { class = "org.gnome.Calendar" },
+    opacity     = "override 0.85 override 0.85 override",
+    float       = true,
+    center      = true,
+    animation   = "slide top",
+    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "(monitor_h * 0.025) + 12" }
+})
+
 -- Blurrr and animations
 
 hl.layer_rule({
@@ -143,6 +152,12 @@ hl.layer_rule({
 hl.layer_rule({
   match        = { namespace = "waybar" },
   no_anim = true,
+})
+
+-- Clean slide in animation for the side bar
+hl.layer_rule({
+  match        = { namespace = "sidebar" },
+  animation    = "slide left",
 })
 
 -- Fixes animation overlay animating itself into screenshots

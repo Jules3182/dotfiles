@@ -38,7 +38,8 @@ window#waybar {
 #custom-notification,
 #custom-power,
 #bluetooth,
-#custom-gpu
+#custom-gpu,
+#sidebar
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
@@ -213,4 +214,35 @@ menuitem {
 #network.vpn.disconnected {
   border: 1px solid rgba(255,255,255,0.08);
   color: #8a8a8a;
+}
+
+#sidebar {
+  background: rgb(0, 0, 0);
+  border-radius: 0 14px 14px 0;
+  border-left: 0px;
+  margin-left: 0;
+}
+
+#custom-blender,
+#custom-browser,
+#custom-files,
+#custom-term,
+#custom-discord,
+#custom-obsidian,
+#custom-cal
+{
+  font-size: 20px;
+  color: #8a8a8a;
+  padding: 10px 5px 10px 0px;
+}
+
+#custom-blender:hover,
+#custom-browser:hover,
+#custom-files:hover,
+#custom-term:hover,
+#custom-discord:hover,
+#custom-obsidian:hover,
+#custom-cal:hover
+{
+  color: white;
 }

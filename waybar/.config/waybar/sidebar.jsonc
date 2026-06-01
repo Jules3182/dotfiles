@@ -1,0 +1,68 @@
+{
+  "name": "sidebar",
+  "width": "20",
+  "height": "200",
+  "layer": "top",
+  "output": "DP-3",
+  "position": "left",
+  "exclusive": false,
+
+  "modules-center": ["group/sidebar"],
+
+  "group/sidebar": {
+        "orientation": "vertical",
+        "modules": [
+            "custom/term",
+            "custom/files",
+            "custom/browser",
+            "custom/blender",
+            "custom/obsidian",
+            "custom/cal",
+            "custom/discord"
+        ]
+  },
+
+  "custom/blender": {
+    "format": "",
+    "on-click": "blndr", // My weird work around for version control... also broken for some reason
+    "tooltip": true,
+    "tooltip-format": "Blender - BROKEN"
+  },
+  "custom/term": {
+      "format": "",
+      "on-click": "ghostty",
+      "tooltip": true,
+      "tooltip-format": "Ghostty"
+  },
+  "custom/files": {
+      "format": "󰈙",
+      "on-click": "nautilus -w",
+      "tooltip": true,
+      "tooltip-format": "Files"
+  },
+
+  "custom/obsidian": {
+      "format": "",
+      "on-click": "flatpak run md.obsidian.Obsidian & disown",
+      "tooltip": true,
+      "tooltip-format": "Obsidian - BROKEN"
+  },
+  "custom/browser": {
+      "format": "󰖟",
+      "on-click": "brave-browser",
+      "tooltip": true,
+      "tooltip-format": "Brave"
+  },
+  "custom/cal": {
+      "format": "",
+      "on-click": "gnome-calendar",
+      "tooltip": true,
+      "tooltip-format": "Calendar"
+  },
+  "custom/discord": {
+      "format": "󰙯",
+      "on-click": "discord",
+      "tooltip": true,
+      "tooltip-format": "Discord - BROKEN"
+  }
+}
