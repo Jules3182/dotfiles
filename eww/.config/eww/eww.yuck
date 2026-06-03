@@ -98,28 +98,28 @@
     (label :text "Workspace Overview" :class "ovrtxt")
 
     (box :orientation "horizontal"
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"1\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"1\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "1")
           (label :text ws1icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"2\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"2\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "2")
           (label :text ws2icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"3\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"3\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "3")
           (label :text ws3icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"4\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"4\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "4")
           (label :text ws4icons :class "icons")
@@ -127,7 +127,7 @@
       )
 
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"5\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"5\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "5")
           (label :text ws5icons :class "icons")
@@ -136,35 +136,35 @@
     )
 
     (box :orientation "horizontal"
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"6\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"6\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "6")
           (label :text ws6icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"7\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"7\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "7")
           (label :text ws7icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"8\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"8\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "8")
           (label :text ws8icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"9\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"9\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "9")
           (label :text ws9icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"10\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"10\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "10")
           (label :text ws10icons :class "icons")
@@ -173,35 +173,35 @@
     )
 
     (box :orientation "horizontal"
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"11\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"11\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "11")
           (label :text ws11icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"12\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"12\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "12")
           (label :text ws12icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"13\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"13\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "13")
           (label :text ws13icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"14\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"14\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "14")
           (label :text ws14icons :class "icons")
         )
       )
 
-      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"15\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview && killall -SIGUSR1 waybar"
+      (button :onclick "~/.config/hypr/scripts/hl-popin.sh && hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"15\" })) hl.dispatch(hl.dsp.submap(\"reset\"))' && eww close overview"
         (box :orientation "vertical"
           (label :text "15")
           (label :text ws5icons :class "icons")
