@@ -154,10 +154,15 @@ hl.layer_rule({
   no_anim = true,
 })
 
--- Clean slide in animation for the side bar
+-- Clean slide in animation for the side bars
 hl.layer_rule({
-  match        = { namespace = "sidebar" },
+  match        = { namespace = "sidebar-left" },
   animation    = "slide left",
+})
+
+hl.layer_rule({
+  match        = { namespace = "sidebar-right" },
+  animation    = "slide right",
 })
 
 -- Fixes animation overlay animating itself into screenshots

@@ -1,0 +1,46 @@
+{
+  "name": "sidebar-right",
+  "width": "20",
+  "height": "200",
+  "layer": "top",
+  "output": "DP-3",
+  "position": "right",
+  "exclusive": false,
+
+  "modules-center": ["group/sidebar#right"],
+
+  "group/sidebar#right": {
+        "orientation": "vertical",
+        "modules": [
+            "custom/dwindle",
+            "custom/master",
+            "custom/monocle",
+            "custom/scrolling"
+        ]
+  },
+  "custom/monocle": {
+    "format": "󰌨",
+    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"monacle\" } })'",
+    "tooltip": true,
+    "tooltip-format": "Monocle"
+  },
+  "custom/dwindle": {
+    "format": "󱇙",
+    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"dwindle\" } })'",
+    "tooltip": true,
+    "tooltip-format": "Dwindle"
+  },
+  "custom/master": {
+    "format": "",
+    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"master\" } })'",
+    "tooltip": true,
+    "tooltip-format": "Master"
+  },
+  "custom/scrolling": {
+    "format": "󰕬",
+    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"scrolling\" } })'",
+    "tooltip": true,
+    "tooltip-format": "Scrolling"
+  }
+
+}
