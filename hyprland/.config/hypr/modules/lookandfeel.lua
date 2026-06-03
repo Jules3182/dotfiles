@@ -116,6 +116,12 @@ hl.window_rule({
 -- Blurrr and animations
 
 hl.layer_rule({
+  match        = { namespace = "waybar" },
+  blur         = true,
+  ignore_alpha = 0.5,
+})
+
+hl.layer_rule({
   match        = { namespace = "wofi" },
   blur         = true,
   ignore_alpha = 0.5,

@@ -58,14 +58,14 @@ menu {
 	color: #fff;
 }
 menuitem {
-	border-radius: 15px;
+  border-radius: 15px;
 }
 
-/*
 #custom-day, #custom-date {
-  background: rgba(20, 20, 20, 0.45);
+  margin: 12px 6px;
+  padding: 0px 10px;
+  font-family: monospace;
 }
-*/
 
 /* workspaces buttons inside pill */
 
@@ -83,11 +83,6 @@ menuitem {
 #workspaces button {
   color: #ababab;
 }
-/* 
-#workspaces button:nth-child(n+1):nth-child(-n+5) {
-  background: rgba(20, 20, 20, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
-} */
 
 #workspaces button:not(.empty) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.831);
@@ -115,30 +110,6 @@ menuitem {
   /* border-radius: 4px; */
 }
 
-#custom-workspaces {
-  /* word-spacing: normal; */
-  letter-spacing: 3px;
-}
-
-#custom-workspaces.items{
-  font-size: 21px;
-  transition: 0.15s all ease;
-  color: white;
-  /*padding: 4px 12px;
-  margin: 0 2px;
-  border-radius: 8px; */
-}
-
-/* #custom-workspaces.items:not(p) {
-  font-size: 19px;
-  color: red;
-} */
-
-#custom-workspaces.normal {
-  background: rgba(255,255,255,0.25);
-  color: red;
-  padding: 4px 25px;
-}
 #workspaces button:hover:not(.active) {
   background: rgba(0, 0, 0, 0.45);
 }
@@ -199,7 +170,6 @@ menuitem {
 #custom-wallpaper, #custom-power, #bluetooth, #network.vpn, #bluetooth.off, #bluetooth.disabled {
   padding: unset;
   border-radius: 50%;
-
   min-width: 35px;
   min-height: 35px;
 }
@@ -216,6 +186,8 @@ menuitem {
   border: 1px solid rgba(255,255,255,0.08);
   color: #8a8a8a;
 }
+
+/* SIDEBARS */
 
 #sidebar {
   background: rgb(0, 0, 0);

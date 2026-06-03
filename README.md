@@ -53,25 +53,81 @@ sudo dnf update
 sudo dnf install -y hyprland waybar wofi swaync eww ghostty nautilus gnome-clocks hyprshot hyprpicker
 ```
 
-# Screenshots/Features:
+# Features:
+
+### Workspace Grid Movement
+
+It's now a proper workspace grid! It's currently hard coded to a 5x3 grid, and can be navigated with 'CTRL + SHIFT + Arrow Keys', the waybar, or the overview. Check out how it's done in [grid.lua](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/grid.lua). I am debating starting up a new project and actually properly implementing this as a hyprland plugin...
 
 ### Night Mode
-![Screenshot 1](/Resources/Screenshots/Screenshot1.png)
+![Night Mode Empty](/Resources/Screenshots/Screenshot1.png)
 
-![Screenshot 2](/Resources/Screenshots/Screenshot2.png)
+![Night Mode Windows](/Resources/Screenshots/Screenshot2.png)
 
 Background Photo by [Antonia Glaskova](https://unsplash.com/photos/a-group-of-pine-trees-covered-in-snow-OBOgT2CIhQM)
 
 ### Day Mode
-![Screenshot 1](/Resources/Screenshots/Screenshot3.png)
+![Day Mode Empty](/Resources/Screenshots/Screenshot3.png)
 
-![Screenshot 2](/Resources/Screenshots/Screenshot4.png)
+![Day Mode Windows](/Resources/Screenshots/Screenshot4.png)
 
 Background Photo By [Zhaoli JIN](https://unsplash.com/photos/beige-and-black-lamp-on-green-tree-during-nighttime-e4I2ktXz5cA)
 
 (The background switcher button is in the top left corner, script can be found [here](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/scripts/toggle_wallpaper.sh). I didn't feel like a full theme switcher would be needed, and the theming I have done works great for both so this was the perfect inbetween for me)
 
-## Main Tools Used:
+### Custom Power Menu:
+
+![Power Menu](/Resources/Screenshots/powermenu.gif)
+
+### Custom Calander Dropdown:
+
+![Calendar](/Resources/Screenshots/ewwCal.png)
+
+### Wallpaper Switching Overlays:
+
+![Night Overlay](/Resources/Screenshots/popupNight.png)
+
+![Day Overlay](/Resources/Screenshots/popupDay.png)
+
+### Custom Keybindings:
+
+Check out my [Keybind Cheatsheet](https://github.com/Jules3182/dotfiles/blob/main/KeybindCheatsheet.md) for the full breakdown, it's expanded quite a bit since 0.55 to the point that it needed it's own page. The binds themselves are primarily found in [binds.lua](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/binds.lua), with some navigation specific ones split off into [grid.lua](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/grid.lua)
+
+### Bars:
+
+#### Top Bar:
+
+**Day Mode:**
+![Top Waybar Day](/Resources/Screenshots/TopBarDay.png)
+
+**Night Mode:**
+![Top Waybar Night](/Resources/Screenshots/TopBarNight.png)
+
+*Contains my wallpaper switcher, active window, Day-Time-Date, VPN activity button, Bluetooth Activity button, volume, and power menu*
+
+#### Bottom Bar:
+
+**Day Mode:**
+![Bottom Waybar Day](/Resources/Screenshots/BottomBarDay.png)
+
+**Night Mode:**
+![Bottom Waybar Night](/Resources/Screenshots/BottomBarNight.png)
+
+*Contains my memory %, CPU %, GPU %, Network Up/Down, Workspaces, System Tray, and Notifications*
+
+#### Side Bars:
+
+Sidebars use [this Script](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/scripts/sidebar.sh) to check the mouse location and automatically hide/show them!
+
+**Left Sidebar**
+(Quick app launcher)
+![Bottom Waybar Day](/Resources/Screenshots/SidebarLeft.png)
+
+**Right Sidebar**
+(Window layout switcher)
+![Bottom Waybar Day](/Resources/Screenshots/SidebarRight.png)
+
+# Tools Used:
 
 ### [Nobara](https://nobaraproject.org/)
 
@@ -83,37 +139,9 @@ My personal distro of choice, based on fedora and optimized for gaming and media
 
 Everyone's favorite Tiling Window Manager. I was resistant at first, but after using it for about 10 minutes I fell in love and haven't looked back (sorry gnome)
 
-#### Custom "grid" workspace scrolling:
-
-<video src="https://github.com/user-attachments/assets/e7938ba6-eb80-4bcc-a9ef-27f6bfd5c645" width="320" height="240" controls></video>
-
-Although it doesn't actually set up workspaces in a grid it definetly feels like they are, and frankly is just pretty fun to mess around with. You can check how I set it up in the [Binds](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/binds.lua) module of my hyprland config.
-
 ### [Waybar](https://github.com/alexays/waybar)
 
 *For the time being, you will have to build waybar from source or use waybar-git for it to work properly*
-
-#### Top Bar:
-
-**Day Mode:**
-![Top Waybar Day](/Resources/Screenshots/TopBarDay.png)
-
-**Night Mode:**
-![Top Waybar Night](/Resources/Screenshots/TopBarNight.png)
-
-*Contains my wallpaper switcher, active window, Day-Time-Date, Network up/down, memory %, CPU %, volume, and power menu*
-
-#### Bottom Bar:
-
-**Day Mode:**
-![Bottom Waybar Day](/Resources/Screenshots/BottomBarDay.png)
-
-**Night Mode:**
-![Bottom Waybar Night](/Resources/Screenshots/BottomBarNight.png)
-
-*Contains background tasks, persistent workspace switcher, and notifications button*
-
-A taskbar for Hyprland, super customizable in both look and utility. i was able to create the "pills" that I like, and have a main bar at the top runnjng as well as a bottom bar for worksace switching, tasks, and notifications. 
 
 ### [Wofi](https://github.com/SimplyCEO/wofi)
 
@@ -130,20 +158,6 @@ My notification center. This one needs the most work to be honest, it was my mos
 ### [eww](https://github.com/elkowar/eww)
 
 Eww is a pretty interesting and powerful widget tool I came across while looking for a good way to create custom pop ups that weren't just notifications. I'm probably not using it to it's full potential, but I am very happy with what I was able to do with it so far.
-
-#### Custom Power Menu:
-
-![Calendar](/Resources/Screenshots/powermenu.gif)
-
-#### Custom Calander Dropdown:
-
-![Calendar](/Resources/Screenshots/ewwCal.png)
-
-#### Wallpaper Switching Overlays:
-
-![Calendar](/Resources/Screenshots/popupNight.png)
-
-![Calendar](/Resources/Screenshots/popupDay.png)
 
 
 ### [Ghostty](https://ghostty.org/)
@@ -164,23 +178,9 @@ The icing on my Ghostty cake. Just a fancy looking terminal prompt for me, thoug
 
 I mean what's a rice without fastfetching? I have a custom logo for it in the repo, but haven't been using it lately. 
 
-## Custom Additional Keybindings:
-
-Check out [binds.lua](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/binds.lua) for the full list, it's expanded quite a bit since 0.55, but here are a few of my favorite additions:
-
-```
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("~/.config/hypr/scripts/reload.sh")) -- Reload Script
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("brave-browser")) -- Browser Shortcut
-hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + page_down", hl.dsp.exec_cmd("hyprshot -m output -o $HOME/Pictures/Screenshots")) -- Full Page Screenshot
-hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $HOME/Pictures/Screenshots")) -- Region Screenshot
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw")) -- Show/hide Notifications
-hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu && killall -SIGUSR1 waybar")) -- Show/Hide powermenu
-```
-
 ## Whats Next?
 
-- [ ] Fix the waybar tray (could just be a hyprland update bug)
+- [x] Fix the waybar tray (could just be a hyprland update bug)
 - [ ] Fix the weird spacing in the calendar
 - [x] Clicking waybar workspaces should do popin instead of the last slide direction
 - [x] Clean up notifications center (it's mostly unfinished)
