@@ -5,7 +5,7 @@
 
   "modules-left": ["custom/wallpaper", "hyprland/window"],
   "modules-center": ["custom/day", "clock", "custom/date"],
-  "modules-right": ["network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
+  "modules-right": ["custom/tuipom","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
 
   "clock": {
     "tooltip": false,
@@ -53,6 +53,11 @@
 	"format" : "⏻",
 	"tooltip": false,
   "on-click": "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu"
+  },
+  "custom/tuipom": {
+	"format" : "󰥕",
+	"tooltip": false,
+  "on-click": "ghostty -e ~/.cargo/bin/timr-tui -m pomodoro"
   },
   "network#vpn": {
     "interface": "wg0-mullvad",

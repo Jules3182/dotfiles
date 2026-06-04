@@ -23,12 +23,13 @@
 # App Launching
 
 | Bind               | Action                           |
-| ------------------ | -------------------------------- |
+| --------------------| ----------------------------------|
 | `CTRL + SHIFT + Q` | Open Terminal (Ghostty)          |
 | `CTRL + SHIFT + E` | Open File Manager (Nautilus)     |
 | `CTRL + SHIFT + Z` | Open Application Launcher (Wofi) |
 | `SUPER + B`        | Open Browser (Brave)             |
 | `CTRL + SHIFT + O` | Open Floating Ollama Session     |
+| `CTRL + SHIFT + 0` | Open Floating Pomodoro timer     |
 
 ---
 

@@ -15,6 +15,7 @@ local browser       = "brave-browser"
 local notifications = "swaync-client -t -sw"
 local llm           = "ghostty -e ollama run gemma4"
 local ide           = "brave-localhost__-default" -- Code server accessed on machine
+local timer         = "ghostty -e ~/.cargo/bin/timr-tui -m pomodoro"
 
 local mainMod = "SUPER" -- Sets "windows" key as main modifier
 local CSH = "CTRL + SHIFT" -- My ctrl + shift variable.. I just use it so much but also didn't want to change the main mod
@@ -37,6 +38,7 @@ hl.bind(mainMod .. " + page_up", hl.dsp.exec_cmd("hyprshot -m region output -o $
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notifications)) -- Show/hide Notifications
 hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu")) -- Show/Hide powermenu
 hl.bind(CSH .. " + O", hl.dsp.exec_cmd(llm, { float = true})) -- Quick floating Ollama bind
+hl.bind(CSH .. " + 0", hl.dsp.exec_cmd(timer, { float = true, pin = true, move = {22, 62}, size = {480, 280}})) -- Quick floating pomodoro timer
 
 -- Overview with submap for esc closing
 hl.bind(mainMod .. " + TAB", function()
