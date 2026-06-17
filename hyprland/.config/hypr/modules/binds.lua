@@ -39,6 +39,16 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(notifications)) -- Show/hide Notifica
 hl.bind(CSH .. " + insert", hl.dsp.exec_cmd("eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu")) -- Show/Hide powermenu
 hl.bind(CSH .. " + O", hl.dsp.exec_cmd(llm, { float = true})) -- Quick floating Ollama bind
 hl.bind(CSH .. " + 0", hl.dsp.exec_cmd(timer, { float = true, pin = true, move = {22, 62}, size = {480, 280}})) -- Quick floating pomodoro timer
+hl.bind("SUPER + C", function() -- Quick pin keybind
+    local win = hl.get_active_window()
+    if not win then return end
+    hl.dispatch(hl.dsp.window.pin())
+    if win.pinned then
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(ffffff)\" \"Window Pinned!\""))
+    else
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(ffffff)\" \"Window Unpinned!\""))
+    end
+end)
 
 -- Overview with submap for esc closing
 hl.bind(mainMod .. " + TAB", function()

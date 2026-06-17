@@ -120,6 +120,12 @@ hl.window_rule({
     move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "(monitor_h * 0.025) + 12" }
 })
 
+hl.window_rule({
+    match = { pin = true },
+    border_color = "rgb(ffffff) rgb(5adecd)",
+    border_size = 2
+})   
+
 -- Blurrr and animations
 
 hl.layer_rule({
