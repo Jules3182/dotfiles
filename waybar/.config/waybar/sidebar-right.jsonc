@@ -20,25 +20,25 @@
   },
   "custom/monocle": {
     "format": "󰌨",
-    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"monacle\" } })'",
+    "on-click": "hyprctl eval 'hl.config({ general = { workspace = hl.get_active_workspace(), layout = \"monacle\" } })'",
     "tooltip": true,
     "tooltip-format": "Monocle"
   },
   "custom/dwindle": {
     "format": "󱇙",
-    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"dwindle\" } })'",
+    "on-click": "hyprctl eval 'hl.config({ general = { workspace = hl.get_active_workspace(), layout = \"dwindle\" } })'",
     "tooltip": true,
     "tooltip-format": "Dwindle"
   },
   "custom/master": {
     "format": "",
-    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"master\" } })'",
+    "on-click": "hyprctl eval 'hl.config({ general = { workspace = hl.get_active_workspace(), layout = \"master\" } })'",
     "tooltip": true,
     "tooltip-format": "Master"
   },
   "custom/scrolling": {
     "format": "󰕬",
-    "on-click": "hyprctl eval 'hl.config({ general = { layout = \"scrolling\" } })'",
+    "on-click": "hyprctl eval 'hl.config({ general = { workspace = hl.get_active_workspace(), layout = \"scrolling\" } })'",
     "tooltip": true,
     "tooltip-format": "Scrolling"
   }

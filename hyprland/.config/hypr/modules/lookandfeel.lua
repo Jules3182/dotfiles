@@ -102,8 +102,8 @@ hl.window_rule({
 hl.window_rule({
   match   = { class = "WebApp-OpenWebUI" },
   opacity = "override 0.85 override 0.85 override",
-  float   = true,
-  center  = true,
+  -- float   = true,
+  -- center  = true,
 })
 
 hl.window_rule({

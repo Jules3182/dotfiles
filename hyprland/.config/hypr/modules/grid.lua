@@ -36,8 +36,32 @@ end)
 local mainMod = "SUPER"
 local CSH = "CTRL + SHIFT"
 
+-- Default Movement Keys
+local moveKeys = { "up", "right", "down", "left" }
+-- local moveKeys = { "W", "D", "S", "A" }
+-- local moveKeys = { "K", "L", "J", "H" }
+
+-- Keybind to change movment key profile
+local keybindIndex = 0
+hl.bind(CSH .. " + escape", function()
+    if keybindIndex == 0 then
+        -- moveKeys = { "up", "right", "down", "left" }
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Arrow Key Movement Enabled\""))
+        keybindIndex = keybindIndex + 1
+    elseif keybindIndex == 1 then
+        -- moveKeys = { "W", "D", "S", "A" }
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"WASD Movement Enabled\""))
+        keybindIndex = keybindIndex + 1
+    elseif keybindIndex == 2 then
+        -- moveKeys = { "K", "L", "J", "H" }
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"VIM Movement Enabled\""))
+        keybindIndex = 0
+    end
+end)
+-- Okay so reasonably enough that's not how hyprland handles keybindings, so this solution doesn't work. At least on the fly that is. For now you can comment in/out the presets listed in lines 40-42
+
 -- Slide to the right
-hl.bind(CSH .. " + right", function()
+hl.bind(CSH .. " + " .. moveKeys[2], function()
 
     -- Gets current workspace id to determine movement logic
     local ws = hl.get_active_workspace().id
@@ -55,14 +79,14 @@ hl.bind(CSH .. " + right", function()
         -- Resets animation to popin so clicking the waybar doesn't slide in a weird direction
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     else
-        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
+       hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Right Edge of grid!\"")) 
     end
 end)
 
 -- Repeats logic for the rest of the directions
 
 -- Slide to the left
-hl.bind(CSH .. " + left", function()
+hl.bind(CSH .. " + " .. moveKeys[4], function()
 
     local ws = hl.get_active_workspace().id
 
@@ -74,12 +98,12 @@ hl.bind(CSH .. " + left", function()
         hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     else
-        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Left Edge of grid!\""))
     end
 end)
 
 -- One hop this time
-hl.bind(CSH .. " + up", function()
+hl.bind(CSH .. " + " .. moveKeys[1], function()
 
     local ws = hl.get_active_workspace().id
 
@@ -96,12 +120,12 @@ hl.bind(CSH .. " + up", function()
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     else
-        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Top Edge of grid!\""))
     end
 end)
 
 -- Downwards hop this time?
-hl.bind(CSH .. " + down", function()
+hl.bind(CSH .. " + " .. moveKeys[3], function()
 
     local ws = hl.get_active_workspace().id
 
@@ -118,7 +142,7 @@ hl.bind(CSH .. " + down", function()
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     else
-        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Bottom Edge of grid!\""))
     end
 end)
 
@@ -141,7 +165,7 @@ hl.bind(CSH .. " + mouse_down", function()
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     else
-        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Top Edge of grid!\""))
     end
 end)
 
@@ -162,7 +186,7 @@ hl.bind(CSH .. " + mouse_up", function()
 
         hl.dispatch(hl.dsp.exec_cmd("~/.config/hypr/scripts/hl-popin.sh"))
     else
-        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Edge of grid!\""))
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 0 2000 \"rgb(5adecd)\" \"Hit Bottom Edge of grid!\""))
     end
 end)
 
