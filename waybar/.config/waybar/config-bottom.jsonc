@@ -4,11 +4,11 @@
   "output": "DP-3",
   "position": "bottom",
 
-  "modules-left": ["memory", "cpu", "custom/gpu", "network"],
+  "modules-left": ["memory", "cpu", "custom/gpu", "network#traffic"],
 
   "modules-center": ["hyprland/workspaces"],
   
-  "modules-right": ["tray", "custom/notification"],
+  "modules-right": ["custom/media", "tray", "custom/notification"],
 
   "custom/workspaces": {
     "exec": "~/.config/waybar/scripts/workspace-pages.sh",
@@ -59,8 +59,16 @@
   "memory": {
     "format": "Memory: {}%"
   },
-  "network": {
+  "network#traffic": {
     "format": "{bandwidthUpBits}  | {bandwidthDownBits} ",
     "interval": 1
+  },
+  "custom/media": {
+      "format": "{}",
+      "interval": 1,
+      "exec": "playerctl metadata --format '{{artist}} - {{title}}' | sed 's/ - Topic//g'",
+      "on-click": "playerctl play-pause",
+      "on-click-right": "playerctl next",
+      "on-click-middle": "playerctl previous"
   }
 }
