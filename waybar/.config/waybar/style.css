@@ -42,7 +42,8 @@ window#waybar {
 #sidebar,
 #sidebar.right,
 #custom-tuipom,
-#custom-media
+#custom-media,
+#custom-colorpicker
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
@@ -87,12 +88,16 @@ menuitem {
   color: #ababab;
 }
 
-#workspaces button:not(.empty) {
-  
-  /* border-bottom: 1px solid rgba(255, 255, 255, 0.831);
-  border-width: 1px; */
-  /* border-radius: 0; */
+#workspaces button.empty {
+  color: #535353;
 }
+
+/* #workspaces button:not(.empty) {
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.831);
+  border-width: 1px;
+  border-radius: 0;
+} */
 
 #workspaces button:nth-child(5), #workspaces button:nth-child(10), #workspaces button:nth-child(15) {
   border-right: solid 1px #8a8a8a;
@@ -171,13 +176,26 @@ menuitem {
 }
 
 
-#custom-wallpaper, #custom-power, #bluetooth, #network.vpn, #bluetooth.off, #bluetooth.disabled, #custom-tuipom {
+
+#custom-wallpaper,
+#custom-power,
+#bluetooth,
+#network.vpn,
+#bluetooth.off,
+#bluetooth.disabled,
+#custom-tuipom,
+#custom-colorpicker 
+{
   padding: unset;
   border-radius: 50%;
   min-width: 35px;
   min-height: 35px;
 }
 
+#custom-colorpicker {
+  font-feature-settings: "liga=0";
+  font-size: 15px;
+}
 
 #network.vpn {
   font-size: 100%;
