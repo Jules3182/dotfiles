@@ -78,22 +78,24 @@ menuitem {
 }
 
 #workspaces {
-  border-radius: 12px;
+  border-radius: 50px;
   padding: 3px 3px;
 }
 
 #workspaces button {
+  border-radius: 50px;
   color: #ababab;
 }
 
 #workspaces button:not(.empty) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.831);
-  border-width: 1px;
+  
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.831);
+  border-width: 1px; */
   /* border-radius: 0; */
 }
 
 #workspaces button:nth-child(5), #workspaces button:nth-child(10), #workspaces button:nth-child(15) {
-  border-right: solid 1px white;
+  border-right: solid 1px #8a8a8a;
   /* border-radius: 4px; */
 }
 
@@ -108,7 +110,7 @@ menuitem {
 }
 
 #workspaces button:nth-child(1), #workspaces button:nth-child(11), #workspaces button:nth-child(6) {
-  border-left: solid 1px white;
+  border-left: solid 1px #8a8a8a;
   /* border-radius: 4px; */
 }
 

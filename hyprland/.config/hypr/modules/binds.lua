@@ -50,6 +50,19 @@ hl.bind("SUPER + C", function() -- Quick pin keybind
     end
 end)
 
+-- Gaming mode to disable all keybinds while gaming so it doesn't mess with stuff (Can also be used as a coding/focus mode if the program you use has overlapping keybinds)
+hl.bind("SUPER + G", function()
+    hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(22ff22)\" \"Gaming Mode Activated!\""))
+    hl.dispatch(hl.dsp.submap("gaming"))
+end)
+
+hl.define_submap("gaming", function()
+    hl.bind("SUPER + G", function()
+        hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(22ff22)\" \"Gaming Mode Deactivated!\""))
+        hl.dispatch(hl.dsp.submap("reset"))
+    end)
+end)
+
 -- Overview with submap for esc closing
 hl.bind(mainMod .. " + TAB", function()
     hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh && eww open overview"))
