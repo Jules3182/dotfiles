@@ -40,9 +40,9 @@
   "custom/date": {
     "exec": "date +'%-m/%-d'",
     "interval": 60,
-    "on-click": "eww active-windows | grep calendar-window  && eww close calendar-window  || eww open calendar-window",
-    "on-click-right": "hyprctl eval 'hl.exec_cmd(\"gnome-calendar\")'",
-    "tooltip-format": "Right Click to open calendar"
+    "on-click": "hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special(\"calendar\"))'",
+    "on-click-right": "hyprctl eval 'hl.exec_cmd(\"gnome-calendar\")'", // Back up to restart the calendar if needed
+    "tooltip-format": "Click to open calendar"
   },
   "custom/wallpaper": {
     "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",

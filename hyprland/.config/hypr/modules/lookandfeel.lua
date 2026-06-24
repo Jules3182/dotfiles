@@ -86,6 +86,8 @@ hl.animation({ leaf = "fadeLayersOut", enabled = true,  speed = 1.39, bezier = "
 hl.animation({ leaf = "workspaces",    enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slide" })
 hl.animation({ leaf = "workspacesIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefade" })
 hl.animation({ leaf = "workspacesOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefade" })
+hl.animation({ leaf = "specialWorkspaceIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefadevert -50%" })
+hl.animation({ leaf = "specialWorkspaceOut", enabled = true,  speed = 1.94, bezier = "almostLinear", style = "slidefadevert -50%" })
 hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "quick" })
 
 -----------------------------------------
@@ -117,7 +119,8 @@ hl.window_rule({
     float       = true,
     center      = true,
     animation   = "slide top",
-    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "(monitor_h * 0.025) + 12" }
+    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "(monitor_h * 0.025) + 12" },
+    workspace   = "special:calendar",
 })
 
 hl.window_rule({
