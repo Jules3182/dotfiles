@@ -127,7 +127,16 @@ hl.window_rule({
     match = { pin = true },
     border_color = "rgb(ffffff) rgb(5adecd)",
     border_size = 2
-})   
+})
+
+hl.window_rule({
+    match = { title = "pomodoro" },
+    float       = true,
+    animation   = "slide top",
+    move        = { "(monitor_w * 0.82)", "(monitor_h * 0.025) + 12" },
+    size        = {400, 300},
+    workspace   = "special:pomodoro",
+})
 
 -- Blurrr and animations
 

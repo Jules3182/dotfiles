@@ -57,7 +57,8 @@
   "custom/tuipom": {
 	"format" : "󰥕",
 	"tooltip-format": "Pomodoro Timer",
-  "on-click": "ghostty -e ~/.cargo/bin/timr-tui -m pomodoro"
+  "on-click": "hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special(\"pomodoro\"))'",
+  "on-click-right": "ghostty +new-window --title=pomodoro -e ~/.cargo/bin/timr-tui -m pomodoro"
   },
   "custom/colorpicker": {
 	"format" : "󰉦",
