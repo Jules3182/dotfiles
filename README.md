@@ -83,6 +83,10 @@ Background Photo By [Zhaoli JIN](https://unsplash.com/photos/beige-and-black-lam
 
 ![Calendar](/Resources/Screenshots/ewwCal.png)
 
+### Pomodoro Timer:
+
+![Pomodoro](/Resources/Screenshots/pomodoro.png)
+
 ### Wallpaper Switching Overlays:
 
 ![Night Overlay](/Resources/Screenshots/popupNight.png)

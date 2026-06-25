@@ -133,7 +133,7 @@ hl.window_rule({
     match = { title = "pomodoro" },
     float       = true,
     animation   = "slide top",
-    move        = { "(monitor_w * 0.82)", "(monitor_h * 0.025) + 12" },
+    move        = { "(monitor_w * 0.82)", "(monitor_h * 0.025) + 18" },
     size        = {400, 300},
     workspace   = "special:pomodoro",
 })
