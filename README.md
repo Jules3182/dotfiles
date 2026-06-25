@@ -117,19 +117,7 @@ Check out my [Keybind Cheatsheet](https://github.com/Jules3182/dotfiles/blob/mai
 **Night Mode:**
 ![Bottom Waybar Night](/Resources/Screenshots/BottomBarNight.png)
 
-*Contains my memory %, CPU %, GPU %, Network Up/Down, Workspaces, System Tray, and Notifications*
-
-#### Side Bars:
-
-Sidebars use [this Script](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/scripts/sidebar.sh) to check the mouse location and automatically hide/show them!
-
-**Left Sidebar**
-(Quick app launcher)
-![Bottom Waybar Day](/Resources/Screenshots/SidebarLeft.png)
-
-**Right Sidebar**
-(Window layout switcher)
-![Bottom Waybar Day](/Resources/Screenshots/SidebarRight.png)
+*Contains my System Stats Button, Memory %, CPU %, GPU %, Network Up/Down, Workspaces, Media Player, System Tray, and Notifications*
 
 # Tools Used:
 
