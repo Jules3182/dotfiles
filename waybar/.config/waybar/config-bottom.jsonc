@@ -4,7 +4,7 @@
   "output": "DP-3",
   "position": "bottom",
 
-  "modules-left": ["memory", "cpu", "custom/gpu", "network#traffic"],
+  "modules-left": ["custom/sysstats", "memory", "cpu", "custom/gpu", "network#traffic"],
 
   "modules-center": ["hyprland/workspaces"],
   
@@ -70,5 +70,11 @@
       "on-click": "playerctl play-pause",
       "on-click-right": "playerctl next",
       "on-click-middle": "playerctl previous"
+  },
+  "custom/sysstats": {
+    "format": "󰄪",
+    "tooltip-format": "System Performance Stats",
+    "on-click": "~/.config/hypr/scripts/sysstats.sh",
+    "on-click-right": "ghostty +new-window --title=sysstats -e btop"
   }
 }
