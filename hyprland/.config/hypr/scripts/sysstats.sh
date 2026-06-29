@@ -7,6 +7,8 @@ hyprctl eval 'hl.animation({ leaf = "specialWorkspaceOut", enabled = true,  spee
 # Opens the system stats special workspace
 hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("sysstats"))'
 
+# hyprctl eval 'hl.dispatch(hl.dsp.submap("bottomWidgets"))'
+
 # Sets them back to normal
 
 hyprctl eval 'hl.animation({ leaf = "specialWorkspaceIn",  enabled = true,  speed = 2.71, bezier = "almostLinear", style = "slidefadevert -50%" })'

@@ -156,6 +156,17 @@ hl.window_rule({
     workspace   = "special:sysstats",
 })
 
+hl.window_rule({
+    match = { title = "quake" },
+    float       = true,
+    animation   = "slide top",
+    move        = { "4", "4" },
+    size        = {2550, 520},
+    workspace   = "special:quake",
+    xray        = false,
+})
+
+
 -- Blurrr and animations
 
 hl.layer_rule({

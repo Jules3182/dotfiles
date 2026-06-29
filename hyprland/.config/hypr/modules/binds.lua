@@ -49,6 +49,8 @@ hl.bind("SUPER + C", function() -- Quick pin keybind
         hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(ffffff)\" \"Window Unpinned!\""))
     end
 end)
+hl.bind("SUPER + Q", hl.dsp.exec_cmd("hyprctl clients | grep quake  && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special(\"quake\"))'  || ghostty --title=quake"))
+
 
 -- Gaming mode to disable all keybinds while gaming so it doesn't mess with stuff (Can also be used as a coding/focus mode if the program you use has overlapping keybinds)
 hl.bind("SUPER + G", function()
@@ -75,6 +77,31 @@ hl.define_submap("overview", function()
         hl.dispatch(hl.dsp.submap("reset"))
     end)
 end)
+
+-- Failed attempt at adding a submap to allow me to exit the widgets with escape, I'll figure this out another time
+-- hl.define_submap("topWidgets", function()
+--     hl.bind("escape", function()
+--         hl.dispatch(hl.dsp.exec_cmd("eww close overview"))
+--         hl.dispatch(hl.dsp.submap("reset"))
+--     end)
+-- end)
+
+-- hl.bind(mainMod .. " + O", function()
+--     hl.dispatch(hl.dsp.submap("bottomWidgets"))
+-- end)
+
+-- hl.define_submap("bottomWidgets", function()
+
+--     hl.bind("escape", function()
+--         if hl.get_active_special_workspace() then
+--             hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(22ff22)\" \"Workspace is Special\""))
+--             hl.dispatch(hl.dsp.workspace.toggle_special("sysstats"))
+--         else
+--             hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(22ff22)\" \"Workspace is Not Special\""))
+--         end
+--         hl.dispatch(hl.dsp.submap("reset"))
+--     end)
+-- end)
 
 -- Built out hide waybar keybind with on the fly gap adjustments to maximize screenspace when in this psudofullscreen mode
 local bar_hidden = false
