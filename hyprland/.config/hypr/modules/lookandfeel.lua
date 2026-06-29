@@ -139,6 +139,15 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    match = { title = "newnote" },
+    float       = true,
+    animation   = "fade",
+    -- move        = { "(monitor_w * 0.8)", "(monitor_h * 0.06) + 18" },
+    size        = {400, 100},
+    workspace   = "special:newnote",
+})
+
+hl.window_rule({
     match = { title = "sysstats" },
     float       = true,
     animation   = "slide bottom",

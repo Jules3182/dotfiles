@@ -44,7 +44,8 @@ window#waybar {
 #custom-tuipom,
 #custom-media,
 #custom-colorpicker,
-#custom-sysstats
+#custom-sysstats,
+#custom-newnote
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
@@ -184,7 +185,8 @@ menuitem {
 #bluetooth.disabled,
 #custom-tuipom,
 #custom-colorpicker,
-#custom-sysstats
+#custom-sysstats,
+#custom-newnote
 {
   padding: unset;
   border-radius: 50%;

@@ -5,7 +5,7 @@
 
   "modules-left": ["custom/wallpaper", "hyprland/window"],
   "modules-center": ["custom/day", "clock", "custom/date"],
-  "modules-right": ["custom/colorpicker", "custom/tuipom","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
+  "modules-right": ["custom/newnote", "custom/colorpicker", "custom/tuipom","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
 
   "clock": {
     "tooltip": false,
@@ -64,6 +64,11 @@
 	"format" : "󰉦",
 	"tooltip-format": "Pick Color",
   "on-click": "hyprpicker -a -n"
+  },
+  "custom/newnote": {
+	"format" : "󰷬",
+	"tooltip-format": "New Obsidian Note",
+  "on-click": "ghostty +new-window --title=newnote -e ~/.config/hypr/scripts/newnote.sh"
   },
   "network#vpn": {
     "interface": "wg0-mullvad",

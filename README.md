@@ -87,6 +87,8 @@ Background Photo By [Zhaoli JIN](https://unsplash.com/photos/beige-and-black-lam
 
 ![Pomodoro](/Resources/Screenshots/pomodoro.png)
 
+The TUI app I used can be found [here](https://github.com/sectore/timr-tui)!
+
 ### Wallpaper Switching Overlays:
 
 ![Night Overlay](/Resources/Screenshots/popupNight.png)
