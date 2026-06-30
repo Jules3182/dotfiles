@@ -5,7 +5,12 @@
 
   "modules-left": ["custom/wallpaper", "hyprland/window"],
   "modules-center": ["custom/day", "clock", "custom/date"],
-  "modules-right": ["custom/newnote", "custom/colorpicker", "custom/tuipom","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
+  "modules-right": ["group/quicktools","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
+
+  "group/quicktools": {
+    "orientation": "horizontal",
+    "modules": ["custom/newnote", "custom/colorpicker", "custom/tuipom"]
+  },
 
   "clock": {
     "tooltip": false,
@@ -19,7 +24,8 @@
     "format-icons": {
       "default": ["", "", " "]
     },
-    "on-click": "pavucontrol"
+    "on-click": "hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special(\"audio\"))'",
+    "on-click-right": "pavucontrol"
   },
   "bluetooth": {
     "format-on": "󰂯",
@@ -55,20 +61,20 @@
   "on-click": "eww active-windows | grep powermenu  && eww close powermenu  || eww open powermenu"
   },
   "custom/tuipom": {
-	"format" : "󰥕",
+	"format" : "󰀠",
 	"tooltip-format": "Pomodoro Timer",
   "on-click": "hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special(\"pomodoro\"))'",
   "on-click-right": "ghostty +new-window --title=pomodoro -e ~/.cargo/bin/timr-tui -m pomodoro"
   },
   "custom/colorpicker": {
-	"format" : "󰉦",
+	"format" : "󱏜",
 	"tooltip-format": "Pick Color",
   "on-click": "hyprpicker -a -n"
   },
   "custom/newnote": {
-	"format" : "󰷬",
+	"format" : "󱞂",
 	"tooltip-format": "New Obsidian Note",
-  "on-click": "ghostty +new-window --title=newnote -e ~/.config/hypr/scripts/newnote.sh"
+  "on-click": "hyprctl clients | grep newnote  && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special(\"newnote\"))'  || ghostty +new-window --title=newnote -e ~/.config/hypr/scripts/newnote.sh"
   },
   "network#vpn": {
     "interface": "wg0-mullvad",

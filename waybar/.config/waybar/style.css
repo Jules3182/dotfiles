@@ -39,13 +39,8 @@ window#waybar {
 #custom-power,
 #bluetooth,
 #custom-gpu,
-#sidebar,
-#sidebar.right,
-#custom-tuipom,
-#custom-media,
-#custom-colorpicker,
 #custom-sysstats,
-#custom-newnote
+#custom-media
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
@@ -92,6 +87,10 @@ menuitem {
 
 #workspaces button.empty {
   color: #535353;
+}
+
+#workspaces button.empty.active {
+  color: #232323;
 }
 
 /* #workspaces button:not(.empty) {
@@ -211,54 +210,6 @@ menuitem {
   color: #8a8a8a;
 }
 
-/* SIDEBARS */
-
-#sidebar {
-  background: rgb(0, 0, 0);
-  border-radius: 0 14px 14px 0;
-  border-left: 0px;
-  margin-left: 0;
-}
-
-#sidebar.right {
-  background: rgb(0, 0, 0);
-  border-radius: 14px 0 0 14px;
-  border-right: 0px;
-  margin-right: 0;
-}
-
-#custom-blender,
-#custom-browser,
-#custom-files,
-#custom-term,
-#custom-discord,
-#custom-obsidian,
-#custom-cal,
-#custom-dwindle,
-#custom-monocle,
-#custom-scrolling,
-#custom-master
-{
-  font-size: 20px;
-  color: #8a8a8a;
-  padding: 10px 5px 10px 0px;
-}
-
-#custom-blender:hover,
-#custom-browser:hover,
-#custom-files:hover,
-#custom-term:hover,
-#custom-discord:hover,
-#custom-obsidian:hover,
-#custom-cal:hover,
-#custom-dwindle:hover,
-#custom-monocle:hover:hover,
-#custom-scrolling:hover,
-#custom-master:hover
-{
-  color: white;
-}
-
 #custom-media,
 #tray,
 #custom-gpu,
@@ -269,4 +220,22 @@ menuitem {
 {
   margin: 12px 6px;
   padding: 0px 10px;
+}
+
+#quicktools {
+  background: rgba(20, 20, 20, 0.65);
+  border-radius: 100px;
+  padding: 0px 4px;
+  margin: 8px 0px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+#custom-newnote, #custom-colorpicker, #custom-tuipom {
+  font-size: 16px;
+  color: #dedede;
+}
+
+#custom-newnote:hover, #custom-colorpicker:hover, #custom-tuipom:hover {
+  font-size: 18px;
+  color: #fff;
 }

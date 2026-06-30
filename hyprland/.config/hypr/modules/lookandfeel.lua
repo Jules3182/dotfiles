@@ -119,7 +119,7 @@ hl.window_rule({
     float       = true,
     center      = true,
     animation   = "slide top",
-    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "(monitor_h * 0.025) + 12" },
+    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "50" },
     workspace   = "special:calendar",
 })
 
@@ -164,6 +164,16 @@ hl.window_rule({
     size        = {2550, 520},
     workspace   = "special:quake",
     xray        = false,
+})
+
+hl.window_rule({
+    match = { class = "org.pulseaudio.pavucontrol" },
+    opacity = "override 0.85 override 0.85 override",
+    float       = true,
+    animation   = "slide top",
+    move        = { "(monitor_w * 0.78)", "(monitor_h * 0.025) + 18" },
+    size        = {500, 700},
+    workspace   = "special:audio",
 })
 
 
