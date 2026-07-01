@@ -78,30 +78,15 @@ hl.define_submap("overview", function()
     end)
 end)
 
--- Failed attempt at adding a submap to allow me to exit the widgets with escape, I'll figure this out another time
--- hl.define_submap("topWidgets", function()
---     hl.bind("escape", function()
---         hl.dispatch(hl.dsp.exec_cmd("eww close overview"))
---         hl.dispatch(hl.dsp.submap("reset"))
---     end)
--- end)
-
--- hl.bind(mainMod .. " + O", function()
---     hl.dispatch(hl.dsp.submap("bottomWidgets"))
--- end)
-
--- hl.define_submap("bottomWidgets", function()
-
---     hl.bind("escape", function()
---         if hl.get_active_special_workspace() then
---             hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(22ff22)\" \"Workspace is Special\""))
---             hl.dispatch(hl.dsp.workspace.toggle_special("sysstats"))
---         else
---             hl.dispatch(hl.dsp.exec_cmd("hyprctl notify 1 2000 \"rgb(22ff22)\" \"Workspace is Not Special\""))
---         end
---         hl.dispatch(hl.dsp.submap("reset"))
---     end)
--- end)
+-- lol that was easy actually, escape key for the special workspaces
+hl.bind("escape", function()
+    if hl.get_active_special_workspace() then
+        hl.dispatch(hl.dsp.workspace.toggle_special())
+        hl.dispatch(hl.dsp.workspace.toggle_special()) -- for some reason it needs to be done twice, once only hides the window, but the second one hides the whole workspace
+    else
+        hl.dispatch(hl.dsp.send_shortcut({ mods = "nil", key = "escape"})) -- Sends normal escape if its not a special workspace
+    end
+end)
 
 -- Built out hide waybar keybind with on the fly gap adjustments to maximize screenspace when in this psudofullscreen mode
 local bar_hidden = false
