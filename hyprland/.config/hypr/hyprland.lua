@@ -32,3 +32,5 @@ require("modules.lookandfeel")
 require("modules.devices")
 
 require("modules.grid")
+
+require("modules.swsaswidgets")

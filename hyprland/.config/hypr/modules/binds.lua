@@ -78,15 +78,7 @@ hl.define_submap("overview", function()
     end)
 end)
 
--- lol that was easy actually, escape key for the special workspaces
-hl.bind("escape", function()
-    if hl.get_active_special_workspace() then
-        hl.dispatch(hl.dsp.workspace.toggle_special())
-        hl.dispatch(hl.dsp.workspace.toggle_special()) -- for some reason it needs to be done twice, once only hides the window, but the second one hides the whole workspace
-    else
-        hl.dispatch(hl.dsp.send_shortcut({ mods = "nil", key = "escape"})) -- Sends normal escape if its not a special workspace
-    end
-end)
+
 
 -- Built out hide waybar keybind with on the fly gap adjustments to maximize screenspace when in this psudofullscreen mode
 local bar_hidden = false
