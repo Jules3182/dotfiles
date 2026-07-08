@@ -9,7 +9,7 @@
 
   "group/quicktools": {
     "orientation": "horizontal",
-    "modules": ["custom/newnote", "custom/colorpicker", "custom/tuipom"]
+    "modules": ["custom/newnote", "custom/colorpicker", "custom/tuipom", "custom/counter"]
   },
 
   "clock": {
@@ -83,5 +83,16 @@
     "tooltip": false,
     "on-click": "mullvad status | grep Connected && mullvad disconnect || mullvad connect",
     "on-click-right": "/opt/Mullvad\\ VPN/mullvad-vpn & disown"
+  },
+  "custom/counter": {
+    "exec": "~/.config/waybar/scripts/counter.sh",
+    "return-type": "text",
+    "interval": "once",
+    "signal": 8,
+    "format": "󰒾",
+    "tooltip-format": "{}",
+    "on-click": "",
+    "on-scroll-up": "~/.config/waybar/scripts/counter-inc.sh",
+    "on-scroll-down": "~/.config/waybar/scripts/counter-dec.sh"
   }
 } 

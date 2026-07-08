@@ -185,7 +185,8 @@ menuitem {
 #custom-tuipom,
 #custom-colorpicker,
 #custom-sysstats,
-#custom-newnote
+#custom-newnote,
+#custom-counter
 {
   padding: unset;
   border-radius: 50%;
@@ -235,7 +236,7 @@ menuitem {
   color: #dedede;
 }
 
-#custom-newnote:hover, #custom-colorpicker:hover, #custom-tuipom:hover {
+#custom-newnote:hover, #custom-colorpicker:hover, #custom-tuipom:hover, #custom-counter:hover {
   font-size: 18px;
   color: #fff;
 }
