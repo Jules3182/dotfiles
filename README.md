@@ -16,16 +16,16 @@
 <video src="https://github.com/user-attachments/assets/e6688c99-f86b-4c10-a202-ef359d5a28ad" width="320" height="240" controls></video>
 
 <hr>
-My goal with this set up was to build something clean and visually appealing, without being over the top *ricy*. It's my first real venture outside of a prebuilt desktop envirnment (Or really a dedicated TM for that matter) and I've been absolutely loving it. Getting under the hood and having to set up parts of the system I had taken for granted my whole life, such as notifications or background tasks for example, has been really eye opening and exciting. It really puts you in the drivers seat. To be completely honest this started as a weekend project I just wanted to mess around with to see what the hype is all about, and I haven't booted back into gnome since.
+My goal with this set up was to build something clean and visually appealing, without being over the top *ricy*. It's my first real venture outside of a prebuilt desktop environment (Or really a dedicated TM for that matter) and I've been absolutely loving it. Getting under the hood and having to set up parts of the system I had taken for granted my whole life, such as notifications or background tasks for example, has been really eye opening and exciting. It really puts you in the driver's seat. To be completely honest this started as a weekend project I just wanted to mess around with to see what the hype is all about, and I haven't booted back into gnome since.
 
 With all that being said... I hope you enjoy! <3
 
 *These are still a work in progress, while the set up works pretty well it isn't very organized yet so just keep that in mind if you are cloning it*
 
 
-# Instalation:
+# Installation:
 
-This repo is set up to use [GNU Stow](https://www.gnu.org/software/stow/) for easier and cleaner instalation with symlinks. For a great explaination of what it is and how to use it check out [this](https://www.youtube.com/watch?v=NoFiYOqnC4o) video! He goes way more into depth than I am willing to do on a readme page.
+This repo is set up to use [GNU Stow](https://www.gnu.org/software/stow/) for easier and cleaner installation with symlinks. For a great explanation of what it is and how to use it check out [this](https://www.youtube.com/watch?v=NoFiYOqnC4o) video! He goes way more into depth than I am willing to do on a readme page.
 
 My config relies on the following programs to work properly:
 - hyprland
@@ -81,7 +81,9 @@ Background Photo By [Zhaoli JIN](https://unsplash.com/photos/beige-and-black-lam
 
 ### Custom Calander Dropdown:
 
-![Calendar](/Resources/Screenshots/ewwCal.png)
+![Calendar](/Resources/Screenshots/calendarWidgetSHORT.gif)
+
+*Uses gnome calendar for it's better integration with apple and other calendars. Check out [this module](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/swsaswidgets.lua) for how I turned an app into a widget*
 
 ### Pomodoro Timer:
 
@@ -109,7 +111,20 @@ Check out my [Keybind Cheatsheet](https://github.com/Jules3182/dotfiles/blob/mai
 **Night Mode:**
 ![Top Waybar Night](/Resources/Screenshots/TopBarNight.png)
 
-*Contains my wallpaper switcher, active window, Day-Time-Date, VPN activity button, Bluetooth Activity button, volume, and power menu*
+*Contains my wallpaper switcher, active window title, Day-Time-Date, Quick Tool Bar, VPN activity button, Bluetooth Activity button, Volume, and Power Menu*
+
+##### Quick Tools Section
+
+![Quick Tools](/Resources/Screenshots/QuickTools.png)
+
+*Has a quick obsidian note button, color picker, pomodoro timer, and counter for quick access*
+
+To ensure the counter works run the following commands to set up the number tracking directory and file:
+```
+mkdir -p ~/.local/share/waybar
+echo 0 > ~/.local/share/waybar/counter
+```
+*(or do it with your file explorer of choice)*
 
 #### Bottom Bar:
 
@@ -120,6 +135,12 @@ Check out my [Keybind Cheatsheet](https://github.com/Jules3182/dotfiles/blob/mai
 ![Bottom Waybar Night](/Resources/Screenshots/BottomBarNight.png)
 
 *Contains my System Stats Button, Memory %, CPU %, GPU %, Network Up/Down, Workspaces, Media Player, System Tray, and Notifications*
+
+### Special Workspaces as Widgets:
+
+
+
+*Check [this](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/swsaswidgets.lua) lua module for how it's done*
 
 # Tools Used:
 
@@ -135,30 +156,29 @@ Everyone's favorite Tiling Window Manager. I was resistant at first, but after u
 
 ### [Waybar](https://github.com/alexays/waybar)
 
-*For the time being, you will have to build waybar from source or use waybar-git for it to work properly*
+*For the time being, you will have to build waybar from source or use waybar-git for the tray to work properly*
 
 ### [Wofi](https://github.com/SimplyCEO/wofi)
 
 ![Wofi](/Resources/Screenshots/Wofi.png)
 
-The app launcher I've been using. honestly I'm not completely sold on it though. Works perfectly fine, but I need to tune the look and feel more. 
+The app launcher I've been using. Works perfectly fine, but I need to tune up the look and feel more. 
 
 ### [SwayNC](https://github.com/ErikReider/SwayNotificationCenter)
 
 ![SwayNC](/Resources/Screenshots/Swaync.png)
 
-My notification center. This one needs the most work to be honest, it was my most recent addition to the set up abd is the lease customized (for now)
+My notification center. I settled on a clean and pretty empty set up as it fits what I use it for just fine.
 
 ### [eww](https://github.com/elkowar/eww)
 
 Eww is a pretty interesting and powerful widget tool I came across while looking for a good way to create custom pop ups that weren't just notifications. I'm probably not using it to it's full potential, but I am very happy with what I was able to do with it so far.
 
-
 ### [Ghostty](https://ghostty.org/)
 
 ![Ghostty](/Resources/Screenshots/Ghostty.png)
 
-My favorite terminal! Works great on Linux and Mac, has all the features I would want and looks good while doing it. 
+My favorite terminal emulator! Works great on Linux and Mac, has all the features I want, and looks good while doing it. 
 
 ### [Starship.rs](https://starship.rs/)
 
@@ -175,7 +195,7 @@ I mean what's a rice without fastfetching? I have a custom logo for it in the re
 ## Whats Next?
 
 - [x] Fix the waybar tray (could just be a hyprland update bug)
-- [ ] Fix the weird spacing in the calendar
+- [x] Fix the weird spacing in the calendar
 - [x] Clicking waybar workspaces should do popin instead of the last slide direction
 - [x] Clean up notifications center (it's mostly unfinished)
   - [x] Load in animation
