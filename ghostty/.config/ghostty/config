@@ -10,3 +10,5 @@ window-height = 36
 window-width = 105
 theme = "default"
 keybind = ctrl+shift+q=ignore
+
+custom-shader = ~/.config/ghostty/shaders/in-game-crt-cursor.glsl

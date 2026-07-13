@@ -119,6 +119,12 @@ hl.window_rule({
     border_size = 2
 })
 
+-- Fix for blender file explorer pop up menu being tiny
+hl.window_rule({
+  match   = { class = "blender", float = "true" },
+  opacity = "override 0.85 override 0.85 override",
+  size = { 1050, 650 }
+})
 
 -- Blurrr and animations
 
