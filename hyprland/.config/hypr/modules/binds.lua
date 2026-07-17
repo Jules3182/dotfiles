@@ -11,7 +11,7 @@
 local terminal      = "ghostty"
 local fileManager   = "nautilus -w"
 local menu          = "wofi --show drun"
-local browser       = "brave-browser"
+local browser       = "zen-browser"
 local notifications = "swaync-client -t -sw"
 local llm           = "brave-browser --app=\"http://localhost:9000/\" --class=WebApp-OpenWebUI --name=WebApp-OpenWebUI"
 local ide           = "brave-localhost__-default" -- Code server accessed on machine

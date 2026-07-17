@@ -1,0 +1,38 @@
+{
+    "workbench.colorCustomizations": {
+
+        // General color stuff
+        "list.hoverForeground": "#a3aed2",
+        "list.hoverBackground": "#171921",
+
+        // Main colors
+
+        // Darker sections
+        "editor.background": "#171921",
+        "panel.background": "#171921",
+
+        // everywhere else (should match the rest of my rice, somehow is a bit off still)
+        "sideBar.background": "#20222c",
+        "activityBar.background": "#20222c",
+        "statusBar.background": "#20222c",
+        "titleBar.inactiveBackground": "#20222c",
+        "titleBar.activeBackground": "#1d1f28",
+
+        // Git related stuff
+        "gitDecoration.modifiedResourceForeground": "#5adecd",
+        "gitDecoration.deletedResourceForeground": "#DE5A6C",
+        "gitDecoration.untrackedResourceForeground": "#AEDE5A",
+        
+        // Better accent colors 
+        "panelTitle.activeBorder": "#5adecd",
+        "outputView.background": "#5adecd",
+        "panelTitleBadge.background": "#5adecd",
+        "tab.activeBorder": "#5adecd",
+        "statusBarItem.remoteBackground": "#5adecd",
+        "statusBar.debuggingBackground": "#5adecd",
+        "list.inactiveSelectionForeground": "#5adecd",
+        
+        // This needs to be updated
+        "list.activeSelectionForeground": "#1d2230", 
+    }
+}
