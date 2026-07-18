@@ -83,6 +83,6 @@ hl.window_rule({
     float       = true,
     center      = true,
     animation   = "slide top",
-    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "50" },
+    move        = { "(monitor_w * 0.5) - (window_w * 0.5)", "(monitor_h * 0.025) + 20" },
     workspace   = "special:calendar",
 })

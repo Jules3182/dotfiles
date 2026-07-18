@@ -1,33 +1,38 @@
 {
     "workbench.colorCustomizations": {
 
-        // General color stuff
+    // General color stuff
         "list.hoverForeground": "#a3aed2",
         "list.hoverBackground": "#171921",
 
-        // Main colors
+    // Main colors
 
         // Darker sections
         "editor.background": "#171921",
         "panel.background": "#171921",
+        "breadcrumb.background": "#171921",
+        "editorGroupHeader.tabsBackground": "#171921",
+        // Removes the border from the bottom making it cleaner
+        "tab.activeBorder": "#20222c00",
 
         // everywhere else (should match the rest of my rice, somehow is a bit off still)
+        "tab.inactiveBackground": "#20222c",
         "sideBar.background": "#20222c",
         "activityBar.background": "#20222c",
         "statusBar.background": "#20222c",
         "titleBar.inactiveBackground": "#20222c",
-        "titleBar.activeBackground": "#1d1f28",
+        "titleBar.activeBackground": "#20222c",
+        "panel.border": "#20222c",
 
-        // Git related stuff
+    // Git related stuff
         "gitDecoration.modifiedResourceForeground": "#5adecd",
         "gitDecoration.deletedResourceForeground": "#DE5A6C",
         "gitDecoration.untrackedResourceForeground": "#AEDE5A",
         
-        // Better accent colors 
+    // Better accent colors 
         "panelTitle.activeBorder": "#5adecd",
         "outputView.background": "#5adecd",
         "panelTitleBadge.background": "#5adecd",
-        "tab.activeBorder": "#5adecd",
         "statusBarItem.remoteBackground": "#5adecd",
         "statusBar.debuggingBackground": "#5adecd",
         "list.inactiveSelectionForeground": "#5adecd",

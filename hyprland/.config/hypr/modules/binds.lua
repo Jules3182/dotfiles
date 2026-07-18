@@ -13,7 +13,7 @@ local fileManager   = "nautilus -w"
 local menu          = "wofi --show drun"
 local browser       = "zen-browser"
 local notifications = "swaync-client -t -sw"
-local llm           = "brave-browser --app=\"http://localhost:9000/\" --class=WebApp-OpenWebUI --name=WebApp-OpenWebUI"
+local llm           = "zen-browser --new-window \"http://localhost:9000/\" -P \"OpenWebUI\""
 local ide           = "brave-localhost__-default" -- Code server accessed on machine
 local timer         = "ghostty -e ~/.cargo/bin/timr-tui -m pomodoro"
 
