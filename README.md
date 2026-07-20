@@ -186,6 +186,13 @@ My favorite terminal emulator! Works great on Linux and Mac, has all the feature
 
 The icing on my Ghostty cake. Just a fancy looking terminal prompt for me, though I'm sure there are better uses for it lol. 
 
+Along with my main config I also have starship running in my Code Server docker container, and have set up it's own config. It is based on my main starship set up, but with a couple small changes and more custom directory replacements. You can check it out [here](https://github.com/Jules3182/dotfiles/blob/main/vscode/.config/starship.toml)!
+
+![Starship](/Resources/Screenshots/VsStarship1.png)
+![Starship](/Resources/Screenshots/VsStarship2.png)
+![Starship](/Resources/Screenshots/VsStarship3.png)
+![Starship](/Resources/Screenshots/VsStarship4.png)
+
 ### [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ![Fastfetch](/Resources/Screenshots/FastFetch.png)
