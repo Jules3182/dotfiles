@@ -3,7 +3,7 @@
   "output": "DP-3",
   "position": "top",
 
-  "modules-left": ["custom/wallpaper", "hyprland/window"],
+  "modules-left": ["custom/wallpaper", "custom/blender"], //, "hyprland/window"
   "modules-center": ["custom/day", "clock", "custom/date"],
   "modules-right": ["group/quicktools","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
 
@@ -94,5 +94,10 @@
     "on-click": "",
     "on-scroll-up": "~/.config/waybar/scripts/counter-inc.sh",
     "on-scroll-down": "~/.config/waybar/scripts/counter-dec.sh"
+  },
+  "custom/blender": {
+    "exec": "~/.config/waybar/scripts/waybar_progress.py",
+    "return-type": "json",
+    "interval": 1
   }
 } 
