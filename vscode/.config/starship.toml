@@ -32,6 +32,7 @@ truncation_symbol = ""
 
 # You can put custom directory names here for your different projects
 [directory.substitutions]
+"BlenderProgressAddon" = "󰂫 "
 ".dotfiles" = "dots"
 "/hyprland" = "/ "
 "/ghostty" = "/󱙝 "

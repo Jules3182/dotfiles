@@ -138,9 +138,31 @@ echo 0 > ~/.local/share/waybar/counter
 
 ### Special Workspaces as Widgets:
 
-
+  I got tired of a couple different widgets not working the way I wanted (mostly due to GTK theming limitations) so I decided to just start up a couple different apps in the background at launch and hide them in special workspaces that show when you click their respective waybar buttons! Pretty simple idea, but I hadn't seen it be done before and I built it out to have different animations depending on which one you are using as well as a keybing to make ESC close them again.
 
 *Check [this](https://github.com/Jules3182/dotfiles/blob/main/hyprland/.config/hypr/modules/swsaswidgets.lua) lua module for how it's done*
+
+### VS Code Set Up:
+
+![VS Code](/Resources/Screenshots/vscode.png)
+
+I use the docker code server image as my main IDE, this allows me to code from my Ipad (and ocasionally my phone when I'm really desperate) over tailscale when I'm not at home.
+
+My set up has it's own Starship.rs set up thats similar to my main one, but a bit more angular and has different directory replacements:
+
+<img src="/Resources/Screenshots/VsStarship4.png" alt="VS Code Starship" width="45%">
+
+It also has some theme color overrides to match my set up better, you can find that file [here!](https://github.com/Jules3182/dotfiles/blob/main/vscode/.vscode/settings.json)
+
+### Zen Set Up:
+
+![Bottom Waybar Night](/Resources/Screenshots/ZenNight.png)
+
+![Bottom Waybar Night](/Resources/Screenshots/ZenDay.png)
+
+I recently switched to Zen, which has been a really nice change. I use the transparent zen mod and zen internet extension to get it to be transparent and work with lots of different sites. Some need the dark reader extension on top of it to work perfectly, but for the majority of sites it's been great!
+
+*Once I figure out a good way to export my set up I will put it in this repo as well*
 
 # Tools Used:
 
@@ -182,22 +204,25 @@ My favorite terminal emulator! Works great on Linux and Mac, has all the feature
 
 ### [Starship.rs](https://starship.rs/)
 
-![Starship](/Resources/Screenshots/Starship.png)
+
+<img src="/Resources/Screenshots/Starship.png" alt="Main Starship" width="100%">
 
 The icing on my Ghostty cake. Just a fancy looking terminal prompt for me, though I'm sure there are better uses for it lol. 
 
 Along with my main config I also have starship running in my Code Server docker container, and have set up it's own config. It is based on my main starship set up, but with a couple small changes and more custom directory replacements. You can check it out [here](https://github.com/Jules3182/dotfiles/blob/main/vscode/.config/starship.toml)!
 
-![Starship](/Resources/Screenshots/VsStarship1.png)
-![Starship](/Resources/Screenshots/VsStarship2.png)
-![Starship](/Resources/Screenshots/VsStarship3.png)
-![Starship](/Resources/Screenshots/VsStarship4.png)
+<img src="/Resources/Screenshots/VsStarship1.png" alt="VS Code Starship" width="45%">
+<img src="/Resources/Screenshots/VsStarship2.png" alt="VS Code Starship" width="45%">
+<img src="/Resources/Screenshots/VsStarship3.png" alt="VS Code Starship" width="45%">
+<img src="/Resources/Screenshots/VsStarship4.png" alt="VS Code Starship" width="45%">
 
 ### [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
 
 ![Fastfetch](/Resources/Screenshots/FastFetch.png)
 
-I mean what's a rice without fastfetching? I have a custom logo for it in the repo, but haven't been using it lately. 
+![Fastfetch](/Resources/Screenshots/FastFetchEvil.png)
+
+I mean what's a rice without fastfetching? I threw togeather a custon nobara logo that fits the vibe a bit better, you can find it [here]()
 
 ## Whats Next?
 
