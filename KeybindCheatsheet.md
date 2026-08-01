@@ -12,11 +12,12 @@
 # System Controls
 
 | Keybind                 | Action                         |
-| ----------------------- | ------------------------------ |
+| -------------------------| --------------------------------|
 | `SUPER + M`             | Exit Hyprland                  |
 | `SUPER + R`             | Run Reload Script              |
 | `CTRL + SHIFT + INSERT` | Open Power Menu                |
 | `SUPER + N`             | Open/Close Notification Center |
+| `SUPER + L`             | Locks the screen               |
 
 ---
 
@@ -27,8 +28,8 @@
 | `CTRL + SHIFT + Q` | Open Terminal (Ghostty)          |
 | `CTRL + SHIFT + E` | Open File Manager (Nautilus)     |
 | `CTRL + SHIFT + Z` | Open Application Launcher (Wofi) |
-| `SUPER + B`        | Open Browser (Brave)             |
-| `CTRL + SHIFT + O` | Open Floating Ollama Session     |
+| `SUPER + B`        | Open Browser (Zen)               |
+| `CTRL + SHIFT + O` | Open Floating Open-webUI Session |
 | `CTRL + SHIFT + 0` | Open Floating Pomodoro timer     |
 
 ---

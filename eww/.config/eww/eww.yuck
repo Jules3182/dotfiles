@@ -81,6 +81,7 @@
 
     (button :onclick "systemctl poweroff" "Power Off")
     (button :onclick "systemctl reboot" "Reboot")
+    (button :onclick "hyprlock" "Lock")
     (button :onclick "exit" "Log Out")
     (button :onclick "eww close powermenu" "Cancel")
   )
