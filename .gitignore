@@ -2,3 +2,4 @@ hyprland/.config/hypr/.wallpaper_state
 ghostty/.config/ghostty/shaders
 rofi
 waybar_progress.py
+hyprlock_progress.py
