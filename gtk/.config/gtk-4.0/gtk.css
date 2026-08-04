@@ -1,0 +1,75 @@
+/* Panel pill styling */
+/* LEFT OVER GNOME STUFF */
+#panel .panel-button {
+  background-color: rgba(30, 30, 30, 0.6);
+  border-radius: 12px;
+  margin: 4px 6px;
+  padding: 6px 10px;
+}
+
+/* Nautilus styling to match my system! */
+
+/* Setting backgrounds to match my terminal */
+window, .nautilus-window {
+  background: rgba(29, 31, 40, 0.7);
+}
+
+/* Text color */
+.nautilus-window * {
+  color: #fdfdfd;
+}
+
+/* Fix tooltip blow out */
+popover > contents,
+.popover > contents,
+tooltip,
+.tooltip {
+  background-color: rgba(29, 31, 40, 0.85);
+}
+
+/* Floating bar stuff (apparently not called a tooltip lol) */
+.nautilus-window .floating-bar {
+  background: #1d2230;
+}
+
+/* Sidebar specific stuff */
+.navigation-sidebar {
+  background: #1d2230;
+}
+
+toolbarview revealer.top-bar > windowhandle > box > headerbar {
+  background: #11111b;
+}
+
+toolbarview revealer:backdrop windowhandle{
+  filter: none;
+}
+
+box.linked.nautilus-pathbar {
+    border-radius: 18px;
+}
+
+toolbarview.undershoot-top {
+border-top-right-radius: 18px;
+border-bottom-right-radius: 18px;
+
+}
+widget.background {
+background: none;
+background-color: transparent;
+background-image: none;
+box-shadow: none;
+border: none;
+}
+
+.top-bar {
+background: transparent;
+}
+
+/* Selection colors */
+.nautilus-window view:selected, .nautilus-grid-view view:selected, 
+.nautilus-window row:selected {
+    background-color: #5adecd;
+    color: #11111b;
+    border-radius: 18px;
+}
