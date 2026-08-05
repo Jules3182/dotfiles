@@ -13,6 +13,10 @@
 window, .nautilus-window {
   background: rgba(29, 31, 40, 0.7);
 }
+/* Fixes empty folders being completely white */
+.view {
+  background-color: rgba(29, 31, 40, 0.45);
+}
 
 /* Text color */
 .nautilus-window * {
@@ -72,4 +76,12 @@ background: transparent;
     background-color: #5adecd;
     color: #11111b;
     border-radius: 18px;
+}
+
+/* Fixes for pop up windows */
+row {
+  background-color: #1d2230;
+}
+.text-button {
+  background-color: #5adecd;
 }
