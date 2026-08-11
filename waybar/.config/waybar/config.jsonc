@@ -3,13 +3,18 @@
   "output": "DP-3",
   "position": "top",
 
-  "modules-left": ["custom/wallpaper", "custom/blender"], //, "hyprland/window"
+  "modules-left": ["custom/wallpaper", "group/blendertools"], //, "hyprland/window"
   "modules-center": ["custom/day", "clock", "custom/date"],
   "modules-right": ["group/quicktools","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
 
   "group/quicktools": {
     "orientation": "horizontal",
     "modules": ["custom/newnote", "custom/colorpicker", "custom/tuipom", "custom/counter"]
+  },
+
+  "group/blendertools": {
+    "orientation": "horizontal",
+    "modules": ["custom/blender", "custom/blender-notify"]
   },
 
   "clock": {
@@ -53,7 +58,7 @@
   "custom/wallpaper": {
     "exec": "~/.config/hypr/scripts/wallpaper_icon.sh",
     "on-click": "~/.config/hypr/scripts/toggle_wallpaper.sh",
-  "interval": 1
+    "interval": 1
   },
   "custom/power": {
 	"format" : "⏻",
@@ -98,6 +103,11 @@
   "custom/blender": {
     "exec": "~/.config/waybar/scripts/waybar_progress.py",
     "return-type": "json",
+    "interval": 1
+  },
+  "custom/blender-notify": {
+    "exec": "~/.config/blender-progress/notify_icon.sh",
+    "on-click": "~/.config/blender-progress/notify_toggle.sh",
     "interval": 1
   }
 } 

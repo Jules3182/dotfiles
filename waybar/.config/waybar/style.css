@@ -41,7 +41,8 @@ window#waybar {
 #custom-gpu,
 #custom-sysstats,
 #custom-media,
-#custom-blender
+#custom-blender,
+#custom-blender-notify
 {
   background: rgba(20, 20, 20, 0.65);
   border-radius: 100px;
@@ -219,7 +220,8 @@ menuitem {
 #cpu,
 #network.traffic,
 #window,
-#custom-blender
+#custom-blender,
+#custom-blender-notify
 {
   margin: 12px 6px;
   padding: 0px 10px;
@@ -241,4 +243,20 @@ menuitem {
 #custom-newnote:hover, #custom-colorpicker:hover, #custom-tuipom:hover, #custom-counter:hover {
   font-size: 18px;
   color: #fff;
+}
+
+#custom-blender-notify {
+ margin-left: -3px;
+}
+
+#blendertools {
+  border: 1px solid rgba(237, 237, 237, 0.322);
+  border-radius: 100px;
+  margin: 8px 10px;
+  padding: 2px;
+}
+
+#blendertools #custom-blender,
+#blendertools #custom-blender-notify {
+    margin: 1px;
 }
