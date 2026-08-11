@@ -1,0 +1,9 @@
+[color]
+from = "#1d2230"
+to = "#5adecd"
+
+[animation]
+fps       = 120
+wind      = 1
+height    = 1
+direction = false

@@ -3,7 +3,7 @@
 font-family = "JetBrainsMono Nerd Font"
 window-subtitle = working-directory
 window-padding-color = extend
-background-opacity = 0.7
+background-opacity = 0.4
 # window-decoration = none
 background-blur = 50
 window-height = 36
