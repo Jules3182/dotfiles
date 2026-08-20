@@ -67,10 +67,7 @@ hl.define_submap("gaming", function()
 end)
 
 -- Overview with submap for esc closing
-hl.bind(mainMod .. " + TAB", function()
-    hl.dispatch(hl.dsp.exec_cmd("~/.config/eww/scripts/overview_icons.sh && eww open overview"))
-    hl.dispatch(hl.dsp.submap("overview"))
-end)
+hl.bind(mainMod .. " + TAB", hl.plugin.gloview.toggle)
 
 hl.define_submap("overview", function()
     hl.bind("escape", function()

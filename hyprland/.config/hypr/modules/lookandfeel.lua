@@ -9,7 +9,7 @@
 hl.config({
     general = {
         gaps_in  = 10,
-        gaps_out =  { top = 5, right = 20, bottom = 0, left = 20 },
+        gaps_out =  { top = 0, right = 20, bottom = 0, left = 20 },
 
         border_size = 1,
 
@@ -125,6 +125,7 @@ hl.layer_rule({
   match        = { namespace = "waybar" },
   blur         = true,
   ignore_alpha = 0.5,
+  animation    = "slide bottom"
 })
 
 hl.layer_rule({
@@ -160,11 +161,6 @@ hl.layer_rule({
 hl.layer_rule({
   match        = { namespace = "hyprpaper" },
   animation = "fade",
-})
--- Fixes wacky fly in from the side when reloading
-hl.layer_rule({
-  match        = { namespace = "waybar" },
-  no_anim = true,
 })
 
 -- Clean slide in animation for the side bars

@@ -34,3 +34,7 @@ require("modules.devices")
 require("modules.grid")
 
 require("modules.swsaswidgets")
+
+require("modules.plugins.hyprglass")
+
+require("modules.plugins.gloview")
