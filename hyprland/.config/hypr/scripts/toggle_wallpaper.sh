@@ -2,8 +2,8 @@
 
 STATE_FILE="$HOME/.config/hypr/.wallpaper_state"
 
-WALLPAPER1="$HOME/wallpapers/snow.jpg"
-WALLPAPER2="$HOME/wallpapers/moon.jpg"
+WALLPAPER1="$HOME/wallpapers/light.jpg"
+WALLPAPER2="$HOME/wallpapers/dark.jpg"
 
 # Default state
 if [ ! -f "$STATE_FILE" ]; then
@@ -21,6 +21,7 @@ if [ "$STATE" = "snow" ]; then
     hyprctl hyprpaper wallpaper "DP-3, $WALLPAPER2"
     hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER2"
 
+    hyprctl eval 'hl.plugin.hyprglass.config({ default_preset = "glass"})'
 
     sleep 2
     eww close wallpaper_popup
@@ -33,6 +34,8 @@ else
     eww open wallpaper_popup
     hyprctl hyprpaper wallpaper "DP-3, $WALLPAPER1"
     hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER1"
+
+    hyprctl eval 'hl.plugin.hyprglass.config({ default_preset = "LightGlass"})'
 
     sleep 2
     eww close wallpaper_popup

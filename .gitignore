@@ -3,3 +3,6 @@ ghostty/.config/ghostty/shaders
 rofi
 waybar_progress.py
 hyprlock_progress.py
+bottom-bar-state
+bottom-watcher.pid
+bottom-bar.pid

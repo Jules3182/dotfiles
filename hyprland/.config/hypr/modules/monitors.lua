@@ -12,7 +12,7 @@ hl.monitor({
     output   = "DP-3",
     mode     = "3840x2160@160",
     position = "0x0",
-    scale    = "1.5",
+    scale    = "1.2",
 })
 
 -- Secondary monitor (Not currently in use)

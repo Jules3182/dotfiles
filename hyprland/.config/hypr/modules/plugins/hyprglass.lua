@@ -24,19 +24,19 @@ if hl.plugin.hyprglass then
     hg.layer("debug-panel", { exclude = true })
 
     -- Presets
-    hg.preset("glass", {
-        blur_strength= 1.0,
+    hg.preset("LightGlass", {
+        blur_strength= 4,
         blur_iterations = 2,
         lens_distortion = 0.3,
-        refraction_strength = 3.0,
-        chromatic_aberration = 0.5,
+        refraction_strength = 1.0,
+        chromatic_aberration = 0.2,
         fresnel_strength = 0.4,
         specular_strength = 0.8,
-        glass_opacity = 1.0,
-        edge_thickness = 0.03,
-        tint_color = 0xffffff00,
+        glass_opacity = 1.2,
+        edge_thickness = 1.18,
+        tint_color = 0xFFFFFF22,
 
-        adaptive_dim = 0.3,
+        adaptive_dim = 0.2,
     })
 
     hg.preset("contrasted", {
