@@ -6,7 +6,7 @@ killall -9 hyprpaper
 killall -9 eww
 
 waybar &
-waybar -c ~/.config/waybar/config-bottom.jsonc &
+#waybar -c ~/.config/waybar/config-bottom.jsonc &
 swaync &
 hyprpaper &
 eww daemon &

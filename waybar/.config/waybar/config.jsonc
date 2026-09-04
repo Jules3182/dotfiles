@@ -5,7 +5,7 @@
 
   "modules-left": ["custom/wallpaper", "group/blendertools"], //, "hyprland/window"
   "modules-center": ["custom/day", "clock", "custom/date"],
-  "modules-right": ["group/quicktools","network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
+  "modules-right": ["group/quicktools","custom/bar-toggle", "network#vpn", "bluetooth", "pulseaudio", "custom/power"],  
 
   "group/quicktools": {
     "orientation": "horizontal",
@@ -109,5 +109,11 @@
     "exec": "~/.config/blender-progress/notify_icon.sh",
     "on-click": "~/.config/blender-progress/notify_toggle.sh",
     "interval": 1
+  },
+  "custom/bar-toggle": {
+    "exec": "~/.config/waybar/scripts/bottom-bar-status.sh",
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "~/.config/waybar/scripts/bottom-bar.sh toggle"
   }
 } 

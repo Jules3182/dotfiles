@@ -42,9 +42,10 @@ window#waybar {
 #custom-sysstats,
 #custom-media,
 #custom-blender,
-#custom-blender-notify
+#custom-blender-notify,
+#custom-bar-toggle
 {
-  background: rgba(20, 20, 20, 0.65);
+  background: rgba(20, 20, 20, 0.15);
   border-radius: 100px;
   padding: 3px 12px;
   margin: 8px 6px;
@@ -178,6 +179,13 @@ menuitem {
   border-radius: 100%;
 }
 
+#custom-bar-toggle{
+  font-size: 15px;
+  padding: 0px 12px 0px 8px;
+  border-radius: 50%;
+  min-width: 17px;
+}
+
 #custom-wallpaper,
 #custom-power,
 #bluetooth,
@@ -228,7 +236,7 @@ menuitem {
 }
 
 #quicktools {
-  background: rgba(20, 20, 20, 0.65);
+  background: rgba(20, 20, 20, 0.25);
   border-radius: 100px;
   padding: 0px 4px;
   margin: 8px 0px;

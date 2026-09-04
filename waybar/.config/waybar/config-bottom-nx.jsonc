@@ -1,9 +1,9 @@
 {
-
+// Not exclusive 
   "layer": "top",
   "output": "DP-3",
   "position": "bottom",
-  // "exclusive": false,
+  "exclusive": false,
 
   "modules-left": ["custom/sysstats", "memory", "cpu", "custom/gpu", "network#traffic"],
 
