@@ -33,7 +33,7 @@ if hl.plugin.hyprglass then
         fresnel_strength = 0.4,
         specular_strength = 0.8,
         glass_opacity = 1.2,
-        edge_thickness = 1.18,
+        edge_thickness = 2,
         tint_color = 0xFFFFFF22,
 
         adaptive_dim = 0.2,

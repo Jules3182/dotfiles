@@ -11,7 +11,7 @@ hl.config({
         gaps_in  = 10,
         gaps_out =  { top = 0, right = 20, bottom = 0, left = 20 },
 
-        border_size = 1,
+        border_size = 2,
 
         col = {
             active_border   = { colors = {"rgba(ffffff55)", "rgba(5adecd99)"}, angle = 45 },
@@ -36,10 +36,14 @@ hl.config({
 
         shadow = {
             enabled         = true,
-            range           = 10,
-            render_power    = 5,
-            color           = 0xee757575,
-            color_inactive  = 0x001a1a11,
+            range           = 16,
+            render_power    = 3,
+            color           = 0x55000000,
+            color_inactive  = 0x44000000,
+
+            offset          = {6, 6},
+            
+            scale           = 1.0,
         },
 
         blur = {
@@ -98,7 +102,7 @@ hl.animation({ leaf = "zoomFactor",    enabled = true,  speed = 7,    bezier = "
 -- Window Transaprency for apps
 
 hl.window_rule({
-  match   = { class = "brave-localhost__-Default" },
+  match   = { class = "codium" },
   opacity = "override 0.85 override 0.85 override",
 })
 

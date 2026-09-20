@@ -39,5 +39,6 @@
         
         // This needs to be updated
         "list.activeSelectionForeground": "#1d2230", 
-    }
+    },
+    "editor.fontFamily": "JetBrainsMono NF Regular"
 }
