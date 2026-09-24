@@ -118,6 +118,63 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:mag
 hl.bind(CSH .. " + mouse:272", hl.dsp.window.move({ workspace = "e-1" }))
 hl.bind(CSH .. " + mouse:273", hl.dsp.window.move({ workspace = "e+1" }))
 
+-- Moving all windows in a workspace up and down by adding alt
+
+-- UP
+local function move_all_windows_up()
+    local current_ws = hl.get_active_workspace()
+    if not current_ws then return end
+    
+    local current_id = tonumber(current_ws.id)
+    if not current_id then return end
+    local target_id = current_id + 1
+
+    -- Gets all windows in the current workspace
+    local windows = hl.get_workspace_windows(current_ws)
+    if not windows then return end
+
+    -- Loop through each window and move it to the right workspace
+    for _, win in ipairs(windows) do
+        if win.address then
+            hl.dispatch(hl.dsp.window.move({
+                workspace = tostring(target_id),
+                window = "address:" .. win.address,
+                follow = true
+            }))
+        end
+    end
+end
+
+-- DOWN
+local function move_all_windows_down()
+    local current_ws = hl.get_active_workspace()
+    if not current_ws then return end
+    
+    local current_id = tonumber(current_ws.id)
+    if not current_id then return end
+    local target_id = current_id - 1
+
+    -- Gets all windows in the current workspace
+    local windows = hl.get_workspace_windows(current_ws)
+    if not windows then return end
+
+    -- Loop through each window and move it to the right workspace 
+    for _, win in ipairs(windows) do
+        if win.address then
+            hl.dispatch(hl.dsp.window.move({
+                workspace = tostring(target_id),
+                window = "address:" .. win.address,
+                follow = true
+            }))
+        end
+    end
+end
+
+-- Bind the function to a hotkey (e.g., SUPER + ALT + UP)
+hl.bind(CSH .. " + ALT + mouse:273", move_all_windows_up)
+hl.bind(CSH .. " + ALT + mouse:272", move_all_windows_down)
+
+
 -- Quick Nav Mode! (Because having these bindings active normally was messing with the way I use vs code, so making a submap made sense to snap into a new mode)
 
 hl.bind("CTRL + TAB", function()

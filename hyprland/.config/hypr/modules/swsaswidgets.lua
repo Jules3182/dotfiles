@@ -51,7 +51,7 @@ hl.window_rule({
     match = { title = "sysstats" },
     float       = true,
     animation   = "slide bottom",
-    move        = { "12", "(monitor_h * 0.6)" },
+    move        = { "12", "(monitor_h * 0.68)" },
     size        = {1200, 520},
     workspace   = "special:sysstats",
 })
