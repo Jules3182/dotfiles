@@ -282,3 +282,77 @@
     )
   )
 )
+
+
+
+(defpoll volume
+    :interval "1s"
+    :initial "0"
+    `~/.config/eww/scripts/volume.sh volume`)
+
+(defpoll volume_icon
+    :interval "1s"
+    :initial "󰕾"
+    `~/.config/eww/scripts/volume.sh icon`)
+
+(defpoll volume_muted
+    :interval "1s"
+    :initial "false"
+    `~/.config/eww/scripts/volume.sh muted`)
+
+
+(defwidget volume_indicator []
+    (eventbox
+        :class "volume-eventbox"
+        :onclick "~/.config/eww/scripts/volume.sh toggle"
+        :onscroll-up "~/.config/eww/scripts/volume.sh up"
+        :onscroll-down "~/.config/eww/scripts/volume.sh down"
+
+        (box
+            :class "volume"
+            :orientation "h"
+            :space-evenly false
+
+            (label
+                :class "volume-icon"
+                :text volume_icon)
+
+            (label
+                :class "volume-text"
+                :text "${volume}%"))))
+
+(defvar volume_osd_visible false)
+
+(defwindow volume_popup
+    :monitor 0
+    :geometry (geometry
+        :x "0px"
+        :y "1600px"
+        :width "450px"
+        :height "80px"
+        :anchor "top center")
+    :stacking "fg"
+    :exclusive false
+    :focusable false
+    :windowtype "dock"
+
+    (revealer
+        :reveal volume_osd_visible
+        :transition "none"
+
+        (box
+            :class "volume-popup"
+            :orientation "v"
+            :halign "center"
+            :valign "center"
+            :space-evenly false
+
+            (label
+                :class "volume-popup-percent"
+                :halign "center"
+                :text "${volume}%")
+
+            (progress
+                :class "volume-popup-progress"
+                :value volume
+                :max 100))))

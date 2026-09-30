@@ -22,4 +22,6 @@ hl.on("hyprland.start", function ()
   -- hl.exec_cmd("hyprctl hyprpaper wallpaper \"DP-3, ~/wallpapers/snow.jpg\"")
   -- hl.exec_cmd("echo \"snow\" > \"~/.config/hypr/.wallpaper_state\"")
   -- BROKEN ^
+  hl.exec_cmd("~/.config/eww/scripts/volume-watcher.sh")
+  hl.exec_cmd("eww open volume_popup")
 end)
