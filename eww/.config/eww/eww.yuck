@@ -347,12 +347,11 @@
             :valign "center"
             :space-evenly false
 
-            (label
-                :class "volume-popup-percent"
+            (stack
                 :halign "center"
-                :text "${volume}%")
+                :valign "center"
 
-            (progress
-                :class "volume-popup-progress"
-                :value volume
-                :max 100))))
+                (progress
+                  :class "volume-popup-progress"
+                  :value volume
+                  :max 100)))))
