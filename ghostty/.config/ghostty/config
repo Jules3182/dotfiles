@@ -12,3 +12,6 @@ theme = "default"
 keybind = ctrl+shift+q=ignore
 
 custom-shader = ~/.config/ghostty/shaders/in-game-crt-cursor.glsl
+
+shell-integration = "detect"
+shell-integration-features = "ssh-terminfo"

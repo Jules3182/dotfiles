@@ -10,7 +10,7 @@ if hl.plugin.hyprglass then
 
 
         brightness = 0.9,
-        dark = { brightness = 0.82 },
+        dark = { brightness = 0.42 },
         light = { adaptive_boost = 0.5 },
 
         layers = { enabled = 1 },
@@ -24,6 +24,10 @@ if hl.plugin.hyprglass then
     hg.layer("debug-panel", { exclude = true })
 
     -- Presets
+    hg.preset("Glass", {
+        tint_color = 0x00000099;
+    })
+
     hg.preset("LightGlass", {
         blur_strength= 4,
         blur_iterations = 2,
