@@ -26,7 +26,7 @@ success_symbol = '[](bold green)'
 style = "fg:#131313 bg:#DE5A6C"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…starship copy 2/"
+truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
