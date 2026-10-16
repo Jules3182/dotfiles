@@ -5,6 +5,9 @@ STATE_FILE="$HOME/.config/hypr/.wallpaper_state"
 WALLPAPER1="$HOME/wallpapers/light.jpg"
 WALLPAPER2="$HOME/wallpapers/dark.jpg"
 
+STARSHIP_DIR="$HOME/.config/starship"
+ACTIVE="$HOME/.config/starship.toml"
+
 # Default state
 if [ ! -f "$STATE_FILE" ]; then
     echo "snow" > "$STATE_FILE"
@@ -12,6 +15,7 @@ fi
 
 STATE=$(cat "$STATE_FILE")
 
+# DARK MODE
 if [ "$STATE" = "snow" ]; then
     hyprctl hyprpaper reload "$WALLPAPER2"
     echo "moon" > "$STATE_FILE"
@@ -22,10 +26,14 @@ if [ "$STATE" = "snow" ]; then
     hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER2"
 
     hyprctl eval 'hl.plugin.hyprglass.config({ default_preset = "glass"})'
+    ln -sfn "$STARSHIP_DIR/starship-dark.toml" "$ACTIVE"
+    hyprctl eval 'hl.config({general = { col = { active_border = { colors = {"rgba(1E183055)", "rgba(DE5A6C99)"}, angle = 45}}}})'
+
 
     sleep 2
     eww close wallpaper_popup
 
+# LIGHT MODE
 else
     hyprctl hyprpaper reload "$WALLPAPER1"
     echo "snow" > "$STATE_FILE"
@@ -36,6 +44,9 @@ else
     hyprctl hyprpaper wallpaper "HDMI-A-1,$WALLPAPER1"
 
     hyprctl eval 'hl.plugin.hyprglass.config({ default_preset = "LightGlass"})'
+    ln -sfn "$STARSHIP_DIR/starship-light.toml" "$ACTIVE"
+
+    hyprctl eval 'hl.config({general = { col = { active_border = { colors = {"rgba(ffffff55)", "rgba(5adecd99)"}, angle = 45}}}})'
 
     sleep 2
     eww close wallpaper_popup

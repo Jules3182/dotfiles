@@ -24,8 +24,11 @@ if hl.plugin.hyprglass then
     hg.layer("debug-panel", { exclude = true })
 
     -- Presets
-    hg.preset("Glass", {
-        tint_color = 0x00000099;
+    hg.preset("glass", {
+        tint_color = 0x00000086;
+        blur_strength = 0;
+        glass_opacity = 0.4;
+        refraction_strength = 2;
     })
 
     hg.preset("LightGlass", {
@@ -36,7 +39,7 @@ if hl.plugin.hyprglass then
         chromatic_aberration = 0.2,
         fresnel_strength = 0.4,
         specular_strength = 0.8,
-        glass_opacity = 1.2,
+        glass_opacity = 0.9,
         edge_thickness = 2,
         tint_color = 0xFFFFFF22,
 

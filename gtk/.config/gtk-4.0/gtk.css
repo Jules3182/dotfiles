@@ -53,11 +53,11 @@ box.linked.nautilus-pathbar {
     border-radius: 18px;
 }
 
-toolbarview.undershoot-top {
-border-top-right-radius: 18px;
-border-bottom-right-radius: 18px;
+/* toolbarview.undershoot-top {
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+} */
 
-}
 widget.background {
 background: none;
 background-color: transparent;
